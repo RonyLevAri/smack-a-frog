@@ -10,10 +10,8 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    
-    private var difficulty = Difficulty.Normal
 
-    @IBOutlet weak var btnEasy: UIButton! {
+    @IBOutlet private weak var btnEasy: UIButton! {
         didSet {
             btnEasy.layer.cornerRadius = 2;
             btnEasy.layer.borderWidth = 1;
@@ -21,7 +19,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var btNormal: UIButton! {
+    @IBOutlet private weak var btNormal: UIButton! {
         didSet {
             btNormal.layer.cornerRadius = 2;
             btNormal.layer.borderWidth = 1;
@@ -29,7 +27,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var btnHard: UIButton! {
+    @IBOutlet private weak var btnHard: UIButton! {
         didSet {
             btnHard.layer.cornerRadius = 2;
             btnHard.layer.borderWidth = 1;
@@ -37,40 +35,31 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var starEasy: UIImageView! {
-        didSet {
-            let image = UIImage(named: "blue_star")
-            starEasy.image = image
+    @IBOutlet private weak var starEasy: UIImageView!
+    
+    @IBOutlet private weak var starNormal: UIImageView!
+    
+    @IBOutlet private weak var starHard: UIImageView!
+    
+    @IBAction private func onDifficultyChosen(_ sender: UIButton) {
+        if let text = sender.titleLabel?.text {
+            let difficulty = Difficulty(rawValue: text)!
+            
+            switch difficulty {
+            case .Easy:
+                starEasy.image = UIImage(named: "Star")
+                starNormal.image = UIImage(named: "blue_star")
+                starHard.image = UIImage(named: "blue_star")
+            case .Normal:
+                starEasy.image = UIImage(named: "blue_star")
+                starNormal.image = UIImage(named: "Star")
+                starHard.image = UIImage(named: "blue_star")
+            case .Hard:
+                starEasy.image = UIImage(named: "blue_star")
+                starNormal.image = UIImage(named: "blue_star")
+                starHard.image = UIImage(named: "Star")
+            }
         }
     }
-    
-    @IBOutlet weak var starNormal: UIImageView! {
-        didSet {
-            starNormal.isHidden = false
-        }
-    }
-    
-    @IBOutlet weak var starHard: UIImageView! {
-        didSet {
-            let image = UIImage(named: "blue_star")
-            starHard.image = image
-        }
-    }
-    
-    @IBAction func onDifficultyChosen(_ sender: UIButton) {
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
