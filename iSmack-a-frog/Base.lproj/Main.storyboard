@@ -1,26 +1,134 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iSmack_a_frog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I4Y-Xy-m8n">
+                                <rect key="frame" x="16" y="37" width="288" height="406.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack-A-Frog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5o-j9-f8b">
+                                        <rect key="frame" x="2" y="0.0" width="284.5" height="55.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="51"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toon_frog_nobackground_croped.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQ6-0L-0Bk">
+                                        <rect key="frame" x="21" y="60.5" width="246" height="191"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMM-nB-ls2">
+                                        <rect key="frame" x="0.0" y="256.5" width="288" height="61"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" red="0.49532475269999998" green="0.81934600079999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nrQ-NQ-PBp">
+                                        <rect key="frame" x="0.0" y="322.5" width="288" height="37"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-fY-lz3">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="37"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star.png" translatesAutoresizingMaskIntoConstraints="NO" id="60L-pg-SGu">
+                                                <rect key="frame" x="96" y="0.0" width="96" height="37"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star.png" translatesAutoresizingMaskIntoConstraints="NO" id="9FX-69-Cpf">
+                                                <rect key="frame" x="192" y="0.0" width="96" height="37"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mdW-sC-NpK">
+                                        <rect key="frame" x="0.0" y="364.5" width="288" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwn-O1-Hew">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="42"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                                                <state key="normal" title="Easy">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onDifficultyChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VvN-nZ-HTo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uME-lL-Sl1">
+                                                <rect key="frame" x="96" y="0.0" width="96" height="42"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                                                <state key="normal" title="Normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onDifficultyChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuY-t3-Doi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGY-z6-1x0">
+                                                <rect key="frame" x="192" y="0.0" width="96" height="42"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                                                <state key="normal" title="Hard">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onDifficultyChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RFJ-1q-VZO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mdW-sC-NpK" secondAttribute="trailing" id="1W2-SZ-3Tl"/>
+                                    <constraint firstItem="TMM-nB-ls2" firstAttribute="leading" secondItem="I4Y-Xy-m8n" secondAttribute="leading" id="QA3-6z-YyA"/>
+                                    <constraint firstAttribute="trailing" secondItem="nrQ-NQ-PBp" secondAttribute="trailing" id="Qul-vW-qmr"/>
+                                    <constraint firstItem="60L-pg-SGu" firstAttribute="centerX" secondItem="uME-lL-Sl1" secondAttribute="centerX" id="Yap-wo-EZ2"/>
+                                    <constraint firstItem="mdW-sC-NpK" firstAttribute="leading" secondItem="I4Y-Xy-m8n" secondAttribute="leading" id="ZNz-Rb-MOZ"/>
+                                    <constraint firstItem="Ymu-fY-lz3" firstAttribute="centerX" secondItem="Lwn-O1-Hew" secondAttribute="centerX" id="d27-Pc-lOc"/>
+                                    <constraint firstAttribute="trailing" secondItem="TMM-nB-ls2" secondAttribute="trailing" id="fcI-dD-3i0"/>
+                                    <constraint firstItem="nrQ-NQ-PBp" firstAttribute="leading" secondItem="I4Y-Xy-m8n" secondAttribute="leading" id="kyw-Rn-FFo"/>
+                                    <constraint firstItem="9FX-69-Cpf" firstAttribute="centerX" secondItem="gGY-z6-1x0" secondAttribute="centerX" id="nCn-wb-S58"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49411764705882355" green="0.81960784313725488" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I4Y-Xy-m8n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oo7-cN-Pf4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I4Y-Xy-m8n" secondAttribute="trailing" id="SMa-4W-VBP"/>
+                            <constraint firstItem="I4Y-Xy-m8n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tai-dX-TH6"/>
+                            <constraint firstItem="I4Y-Xy-m8n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V84-J3-VPa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btNormal" destination="uME-lL-Sl1" id="0Hg-Lr-owY"/>
+                        <outlet property="btnEasy" destination="Lwn-O1-Hew" id="tgF-v2-PdH"/>
+                        <outlet property="btnHard" destination="gGY-z6-1x0" id="Oh8-PS-DYa"/>
+                        <outlet property="starEasy" destination="Ymu-fY-lz3" id="W7q-yd-YnX"/>
+                        <outlet property="starHard" destination="9FX-69-Cpf" id="v3g-gj-Mhc"/>
+                        <outlet property="starNormal" destination="60L-pg-SGu" id="zky-k6-mRm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="22.5" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Star.png" width="39" height="37"/>
+        <image name="toon_frog_nobackground_croped.png" width="246" height="191"/>
+    </resources>
 </document>

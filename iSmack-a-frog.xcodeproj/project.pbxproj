@@ -14,6 +14,12 @@
 		5171E0891F11618F00E9ED65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0871F11618F00E9ED65 /* LaunchScreen.storyboard */; };
 		5171E0941F11618F00E9ED65 /* iSmack_a_frogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0931F11618F00E9ED65 /* iSmack_a_frogTests.swift */; };
 		5171E09F1F11618F00E9ED65 /* iSmack_a_frogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E09E1F11618F00E9ED65 /* iSmack_a_frogUITests.swift */; };
+		5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0AC1F116AC100E9ED65 /* .gitignore */; };
+		5171E0C91F11885400E9ED65 /* toon_frog_nobackground_croped.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */; };
+		5171E0CB1F11898200E9ED65 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0CA1F11898200E9ED65 /* Star.png */; };
+		5171E0CD1F11948C00E9ED65 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0CC1F11948C00E9ED65 /* Game.swift */; };
+		5171E0CF1F12E22400E9ED65 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0CE1F12E22400E9ED65 /* blue_star.png */; };
+		5171E0D11F13FB6200E9ED65 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0D01F13FB6200E9ED65 /* star_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		5171E09A1F11618F00E9ED65 /* iSmack-a-frogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iSmack-a-frogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5171E09E1F11618F00E9ED65 /* iSmack_a_frogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSmack_a_frogUITests.swift; sourceTree = "<group>"; };
 		5171E0A01F11618F00E9ED65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5171E0AC1F116AC100E9ED65 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground_croped.png; sourceTree = "<group>"; };
+		5171E0CA1F11898200E9ED65 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		5171E0CC1F11948C00E9ED65 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5171E0CE1F12E22400E9ED65 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
+		5171E0D01F13FB6200E9ED65 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +89,16 @@
 		5171E0721F11618F00E9ED65 = {
 			isa = PBXGroup;
 			children = (
+				5171E0CC1F11948C00E9ED65 /* Game.swift */,
+				5171E0AC1F116AC100E9ED65 /* .gitignore */,
 				5171E07D1F11618F00E9ED65 /* iSmack-a-frog */,
 				5171E0921F11618F00E9ED65 /* iSmack-a-frogTests */,
 				5171E09D1F11618F00E9ED65 /* iSmack-a-frogUITests */,
 				5171E07C1F11618F00E9ED65 /* Products */,
+				5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */,
+				5171E0CA1F11898200E9ED65 /* Star.png */,
+				5171E0CE1F12E22400E9ED65 /* blue_star.png */,
+				5171E0D01F13FB6200E9ED65 /* star_2.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,8 +250,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5171E0D11F13FB6200E9ED65 /* star_2.png in Resources */,
+				5171E0C91F11885400E9ED65 /* toon_frog_nobackground_croped.png in Resources */,
+				5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */,
 				5171E0891F11618F00E9ED65 /* LaunchScreen.storyboard in Resources */,
+				5171E0CB1F11898200E9ED65 /* Star.png in Resources */,
 				5171E0861F11618F00E9ED65 /* Assets.xcassets in Resources */,
+				5171E0CF1F12E22400E9ED65 /* blue_star.png in Resources */,
 				5171E0841F11618F00E9ED65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5171E0811F11618F00E9ED65 /* ViewController.swift in Sources */,
+				5171E0CD1F11948C00E9ED65 /* Game.swift in Sources */,
 				5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
