@@ -43,22 +43,25 @@ class ViewController: UIViewController {
     
     @IBAction private func onDifficultyChosen(_ sender: UIButton) {
         if let text = sender.titleLabel?.text {
-            let difficulty = Difficulty(rawValue: text)!
-            
-            switch difficulty {
-            case .Easy:
-                starEasy.image = UIImage(named: "Star")
-                starNormal.image = UIImage(named: "blue_star")
-                starHard.image = UIImage(named: "blue_star")
-            case .Normal:
-                starEasy.image = UIImage(named: "blue_star")
-                starNormal.image = UIImage(named: "Star")
-                starHard.image = UIImage(named: "blue_star")
-            case .Hard:
-                starEasy.image = UIImage(named: "blue_star")
-                starNormal.image = UIImage(named: "blue_star")
-                starHard.image = UIImage(named: "Star")
-            }
+            let chosenDifficulty = Difficulty(rawValue: text)!
+            displayStarAboveChosenDifficultyButton(chosenDifficulty)
+        }
+    }
+    
+    private func displayStarAboveChosenDifficultyButton(_ chosenDifficulty: Difficulty) {
+        switch chosenDifficulty {
+        case .Easy:
+            starEasy.image = UIImage(named: "Star")
+            starNormal.image = UIImage(named: "blue_star")
+            starHard.image = UIImage(named: "blue_star")
+        case .Normal:
+            starEasy.image = UIImage(named: "blue_star")
+            starNormal.image = UIImage(named: "Star")
+            starHard.image = UIImage(named: "blue_star")
+        case .Hard:
+            starEasy.image = UIImage(named: "blue_star")
+            starNormal.image = UIImage(named: "blue_star")
+            starHard.image = UIImage(named: "Star")
         }
     }
 }
