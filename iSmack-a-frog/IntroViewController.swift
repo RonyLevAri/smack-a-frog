@@ -64,5 +64,10 @@ class ViewController: UIViewController {
             starHard.image = UIImage(named: "Star")
         }
     }
+    
+    @IBAction private func handleOnPlayButtonClick(_ sender: UIButton) {
+        
+    }
+    
 }
 
