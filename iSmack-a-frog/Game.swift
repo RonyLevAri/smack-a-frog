@@ -10,22 +10,37 @@ import Foundation
 
 struct Game {
     
-    private let gameConfiguration: GameConfig
-    
+    private let gameConfig: GameConfig
     private var playerState = PlayerState()
     private weak var timer: Timer?
     private var launchTimer = false {
         didSet {
-            startTimer()
+            startGameTimer()
         }
     }
     
-    mutating private func startTimer() {
+    private lazy var frogHoles:[FrogHole] = {
+        let size = self.gameConfig.boardSize.rows * self.gameConfig.boardSize.columns
+        return [FrogHole](repeating: FrogHole(), count: size)
+    }()
+    
+    init(gameConfig: GameConfig) {
+        self.gameConfig = gameConfig
+    }
+    
+    func start() {
+        
+    }
+    
+    mutating private func startGameTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
             // updateView()
             print("something")
         }
     }
+    
+    private func initiateGameBoard() {}
+    
     
     mutating private func balancePoints(_ points: Int) {
         playerState.points = points
@@ -35,11 +50,6 @@ struct Game {
         get {
             return playerState.points
         }
-    }
-    
-    init(gameConfig: GameConfig) {
-        gameConfiguration = gameConfig
-        launchTimer = true
     }
     
     private struct PlayerState {
@@ -53,24 +63,5 @@ struct Game {
         case Hit
         case Pannelty
     }
-    
-    private struct GameBoard {
-        private let rows: Int
-        private let columns: Int
-    }
 }
 
-
-struct BoardTeal {
-    
-    enum TealState {
-        case WithForg
-        case WithoutFrog
-    }
-}
-
-enum Difficulty: String {
-    case Easy
-    case Normal
-    case Hard
-}
