@@ -8,41 +8,39 @@
 
 import Foundation
 
-struct Game {
+class Game: NSObject {
     
     private let gameConfig: GameConfig
-    private var playerState = PlayerState()
-    private weak var timer: Timer?
-    private var launchTimer = false {
-        didSet {
-            startGameTimer()
-        }
+    
+    private var playerState = PlayerGameState()
+    
+    private weak var gameTimer: Timer?
+    
+    private var _board: GameBoard
+    
+    var board: GameBoard {
+        return _board
     }
     
-    private lazy var frogHoles:[FrogHole] = {
-        let size = self.gameConfig.boardSize.rows * self.gameConfig.boardSize.columns
-        return [FrogHole](repeating: FrogHole(), count: size)
-    }()
-    
-    init(gameConfig: GameConfig) {
+    init(gameConfig: GameConfig, board: GameBoard) {
         self.gameConfig = gameConfig
+        self._board = board
     }
     
-    func start() {
-        
+    func startGame() {
+        gameTimer = Timer.scheduledTimer(
+            timeInterval: gameConfig.gameIntervalInSeconds,
+            target: self,
+            selector: #selector(Game.stopGame),
+            userInfo: nil,
+            repeats: false)
     }
     
-    mutating private func startGameTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
-            // updateView()
-            print("something")
-        }
+    func stopGame() {
+        gameTimer?.invalidate()
     }
     
-    private func initiateGameBoard() {}
-    
-    
-    mutating private func balancePoints(_ points: Int) {
+    private func balancePoints(_ points: Int) {
         playerState.points = points
     }
     
@@ -52,7 +50,7 @@ struct Game {
         }
     }
     
-    private struct PlayerState {
+    private struct PlayerGameState {
         var misses = 0
         var points = 0
         var useOfShake = 0
@@ -63,5 +61,17 @@ struct Game {
         case Hit
         case Pannelty
     }
+    
 }
+
+struct PositionOnBoard {
+    let row: Int
+    let column: Int
+    
+    init(row: Int, column: Int) {
+        self.row = row
+        self.column = column
+    }
+}
+
 

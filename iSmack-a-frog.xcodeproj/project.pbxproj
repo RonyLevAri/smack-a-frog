@@ -8,18 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E07E1F11618F00E9ED65 /* AppDelegate.swift */; };
-		5171E0811F11618F00E9ED65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0801F11618F00E9ED65 /* ViewController.swift */; };
+		5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0801F11618F00E9ED65 /* IntroViewController.swift */; };
 		5171E0841F11618F00E9ED65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0821F11618F00E9ED65 /* Main.storyboard */; };
-		5171E0861F11618F00E9ED65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0851F11618F00E9ED65 /* Assets.xcassets */; };
 		5171E0891F11618F00E9ED65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0871F11618F00E9ED65 /* LaunchScreen.storyboard */; };
 		5171E0941F11618F00E9ED65 /* iSmack_a_frogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0931F11618F00E9ED65 /* iSmack_a_frogTests.swift */; };
 		5171E09F1F11618F00E9ED65 /* iSmack_a_frogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E09E1F11618F00E9ED65 /* iSmack_a_frogUITests.swift */; };
 		5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0AC1F116AC100E9ED65 /* .gitignore */; };
-		5171E0C91F11885400E9ED65 /* toon_frog_nobackground_croped.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */; };
-		5171E0CB1F11898200E9ED65 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0CA1F11898200E9ED65 /* Star.png */; };
-		5171E0CD1F11948C00E9ED65 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0CC1F11948C00E9ED65 /* Game.swift */; };
-		5171E0CF1F12E22400E9ED65 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0CE1F12E22400E9ED65 /* blue_star.png */; };
-		5171E0D11F13FB6200E9ED65 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0D01F13FB6200E9ED65 /* star_2.png */; };
+		5171E0D31F16AD9100E9ED65 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0D21F16AD9100E9ED65 /* GameViewController.swift */; };
+		5171E0D71F1A6DC600E9ED65 /* GameCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */; };
+		5171E0DA1F1AD66000E9ED65 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0D81F1AD66000E9ED65 /* Game.swift */; };
+		5171E0DB1F1AD66000E9ED65 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0D91F1AD66000E9ED65 /* GameConfig.swift */; };
+		5171E0E51F1D30E900E9ED65 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E41F1D30E900E9ED65 /* GameBoard.swift */; };
+		5171E0E71F1D32F700E9ED65 /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */; };
+		5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E81F1D46D800E9ED65 /* FrogHole.swift */; };
+		5173787A1F21463D00B963B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517378791F21463D00B963B0 /* Assets.xcassets */; };
+		517378831F21471700B963B0 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787B1F21471600B963B0 /* star_2.png */; };
+		517378841F21471700B963B0 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787C1F21471600B963B0 /* Star.png */; };
+		517378851F21471700B963B0 /* toon_frog_nobackground_croped.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */; };
+		517378861F21471700B963B0 /* toon_frog_nobackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */; };
+		517378871F21471700B963B0 /* toon_mean_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787F1F21471600B963B0 /* toon_mean_frog.png */; };
+		517378881F21471700B963B0 /* toon_shocked_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378801F21471600B963B0 /* toon_shocked_frog.png */; };
+		517378891F21471700B963B0 /* toon_sick_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378811F21471600B963B0 /* toon_sick_frog.png */; };
+		5173788A1F21471700B963B0 /* x-death.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378821F21471600B963B0 /* x-death.png */; };
+		5173788D1F21472300B963B0 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788B1F21472300B963B0 /* blue_star.png */; };
+		5173788E1F21472300B963B0 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788C1F21472300B963B0 /* hole.png */; };
+		517378901F21475300B963B0 /* x-life.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788F1F21475300B963B0 /* x-life.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +55,8 @@
 /* Begin PBXFileReference section */
 		5171E07B1F11618F00E9ED65 /* iSmack-a-frog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iSmack-a-frog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5171E07E1F11618F00E9ED65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5171E0801F11618F00E9ED65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5171E0801F11618F00E9ED65 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5171E0831F11618F00E9ED65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5171E0851F11618F00E9ED65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5171E0881F11618F00E9ED65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5171E08A1F11618F00E9ED65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5171E08F1F11618F00E9ED65 /* iSmack-a-frogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iSmack-a-frogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,11 +66,25 @@
 		5171E09E1F11618F00E9ED65 /* iSmack_a_frogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSmack_a_frogUITests.swift; sourceTree = "<group>"; };
 		5171E0A01F11618F00E9ED65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5171E0AC1F116AC100E9ED65 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground_croped.png; sourceTree = "<group>"; };
-		5171E0CA1F11898200E9ED65 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
-		5171E0CC1F11948C00E9ED65 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		5171E0CE1F12E22400E9ED65 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
-		5171E0D01F13FB6200E9ED65 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
+		5171E0D21F16AD9100E9ED65 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellView.swift; sourceTree = "<group>"; };
+		5171E0D81F1AD66000E9ED65 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5171E0D91F1AD66000E9ED65 /* GameConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		5171E0E41F1D30E900E9ED65 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
+		5171E0E81F1D46D800E9ED65 /* FrogHole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrogHole.swift; sourceTree = "<group>"; };
+		517378791F21463D00B963B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5173787B1F21471600B963B0 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
+		5173787C1F21471600B963B0 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground_croped.png; sourceTree = "<group>"; };
+		5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground2.png; sourceTree = "<group>"; };
+		5173787F1F21471600B963B0 /* toon_mean_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_mean_frog.png; sourceTree = "<group>"; };
+		517378801F21471600B963B0 /* toon_shocked_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_shocked_frog.png; sourceTree = "<group>"; };
+		517378811F21471600B963B0 /* toon_sick_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_sick_frog.png; sourceTree = "<group>"; };
+		517378821F21471600B963B0 /* x-death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-death.png"; sourceTree = "<group>"; };
+		5173788B1F21472300B963B0 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
+		5173788C1F21472300B963B0 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		5173788F1F21475300B963B0 /* x-life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-life.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,16 +115,22 @@
 		5171E0721F11618F00E9ED65 = {
 			isa = PBXGroup;
 			children = (
-				5171E0CC1F11948C00E9ED65 /* Game.swift */,
+				5173788B1F21472300B963B0 /* blue_star.png */,
+				5173788C1F21472300B963B0 /* hole.png */,
+				5173787B1F21471600B963B0 /* star_2.png */,
+				5173787C1F21471600B963B0 /* Star.png */,
+				5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */,
+				5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */,
+				5173788F1F21475300B963B0 /* x-life.png */,
+				5173787F1F21471600B963B0 /* toon_mean_frog.png */,
+				517378801F21471600B963B0 /* toon_shocked_frog.png */,
+				517378811F21471600B963B0 /* toon_sick_frog.png */,
+				517378821F21471600B963B0 /* x-death.png */,
 				5171E0AC1F116AC100E9ED65 /* .gitignore */,
 				5171E07D1F11618F00E9ED65 /* iSmack-a-frog */,
 				5171E0921F11618F00E9ED65 /* iSmack-a-frogTests */,
 				5171E09D1F11618F00E9ED65 /* iSmack-a-frogUITests */,
 				5171E07C1F11618F00E9ED65 /* Products */,
-				5171E0C81F11885400E9ED65 /* toon_frog_nobackground_croped.png */,
-				5171E0CA1F11898200E9ED65 /* Star.png */,
-				5171E0CE1F12E22400E9ED65 /* blue_star.png */,
-				5171E0D01F13FB6200E9ED65 /* star_2.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,9 +148,16 @@
 			isa = PBXGroup;
 			children = (
 				5171E07E1F11618F00E9ED65 /* AppDelegate.swift */,
-				5171E0801F11618F00E9ED65 /* ViewController.swift */,
+				5171E0801F11618F00E9ED65 /* IntroViewController.swift */,
+				5171E0D21F16AD9100E9ED65 /* GameViewController.swift */,
+				5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */,
+				5171E0D91F1AD66000E9ED65 /* GameConfig.swift */,
+				5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */,
+				5171E0E81F1D46D800E9ED65 /* FrogHole.swift */,
+				5171E0D81F1AD66000E9ED65 /* Game.swift */,
+				5171E0E41F1D30E900E9ED65 /* GameBoard.swift */,
 				5171E0821F11618F00E9ED65 /* Main.storyboard */,
-				5171E0851F11618F00E9ED65 /* Assets.xcassets */,
+				517378791F21463D00B963B0 /* Assets.xcassets */,
 				5171E0871F11618F00E9ED65 /* LaunchScreen.storyboard */,
 				5171E08A1F11618F00E9ED65 /* Info.plist */,
 			);
@@ -250,14 +289,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5171E0D11F13FB6200E9ED65 /* star_2.png in Resources */,
-				5171E0C91F11885400E9ED65 /* toon_frog_nobackground_croped.png in Resources */,
+				517378871F21471700B963B0 /* toon_mean_frog.png in Resources */,
 				5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */,
+				517378861F21471700B963B0 /* toon_frog_nobackground2.png in Resources */,
+				5173788E1F21472300B963B0 /* hole.png in Resources */,
 				5171E0891F11618F00E9ED65 /* LaunchScreen.storyboard in Resources */,
-				5171E0CB1F11898200E9ED65 /* Star.png in Resources */,
-				5171E0861F11618F00E9ED65 /* Assets.xcassets in Resources */,
-				5171E0CF1F12E22400E9ED65 /* blue_star.png in Resources */,
+				517378851F21471700B963B0 /* toon_frog_nobackground_croped.png in Resources */,
+				5173788A1F21471700B963B0 /* x-death.png in Resources */,
+				5173788D1F21472300B963B0 /* blue_star.png in Resources */,
+				5173787A1F21463D00B963B0 /* Assets.xcassets in Resources */,
+				517378891F21471700B963B0 /* toon_sick_frog.png in Resources */,
+				517378841F21471700B963B0 /* Star.png in Resources */,
 				5171E0841F11618F00E9ED65 /* Main.storyboard in Resources */,
+				517378831F21471700B963B0 /* star_2.png in Resources */,
+				517378881F21471700B963B0 /* toon_shocked_frog.png in Resources */,
+				517378901F21475300B963B0 /* x-life.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +328,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5171E0811F11618F00E9ED65 /* ViewController.swift in Sources */,
-				5171E0CD1F11948C00E9ED65 /* Game.swift in Sources */,
+				5171E0D31F16AD9100E9ED65 /* GameViewController.swift in Sources */,
+				5171E0D71F1A6DC600E9ED65 /* GameCellView.swift in Sources */,
+				5171E0DA1F1AD66000E9ED65 /* Game.swift in Sources */,
+				5171E0E51F1D30E900E9ED65 /* GameBoard.swift in Sources */,
+				5171E0E71F1D32F700E9ED65 /* GameDifficulty.swift in Sources */,
+				5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */,
+				5171E0DB1F1AD66000E9ED65 /* GameConfig.swift in Sources */,
+				5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */,
 				5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +585,7 @@
 				5171E0A51F11618F00E9ED65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5171E0A61F11618F00E9ED65 /* Build configuration list for PBXNativeTarget "iSmack-a-frogTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +594,7 @@
 				5171E0A81F11618F00E9ED65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5171E0A91F11618F00E9ED65 /* Build configuration list for PBXNativeTarget "iSmack-a-frogUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +603,7 @@
 				5171E0AB1F11618F00E9ED65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

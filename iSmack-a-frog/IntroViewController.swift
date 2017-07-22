@@ -9,7 +9,9 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class IntroViewController: UIViewController {
+    
+    private var difficulty = GameDifficulty.Normal
 
     @IBOutlet private weak var btnEasy: UIButton! {
         didSet {
@@ -43,12 +45,13 @@ class ViewController: UIViewController {
     
     @IBAction private func onDifficultyChosen(_ sender: UIButton) {
         if let text = sender.titleLabel?.text {
-            let chosenDifficulty = Difficulty(rawValue: text)!
+            let chosenDifficulty = GameDifficulty(rawValue: text)!
+            difficulty = chosenDifficulty
             displayStarAboveChosenDifficultyButton(chosenDifficulty)
         }
     }
     
-    private func displayStarAboveChosenDifficultyButton(_ chosenDifficulty: Difficulty) {
+    private func displayStarAboveChosenDifficultyButton(_ chosenDifficulty: GameDifficulty) {
         switch chosenDifficulty {
         case .Easy:
             starEasy.image = UIImage(named: "Star")
@@ -65,7 +68,11 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func handleOnPlayButtonClick(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destGameController = segue.destination as? GameViewController {
+            let configuration = GameConfig(difficulty: difficulty, boardSize: BoardSize(rows: 5, columns: 3))
+            destGameController.gameConfig = configuration
+        }
         
     }
     

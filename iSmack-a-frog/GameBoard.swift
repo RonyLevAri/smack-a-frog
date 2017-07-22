@@ -10,7 +10,7 @@ import Foundation
 
 struct GameBoard {
     
-    let size: GameBoardSize
+    let size: BoardSize
     
     private var _cells: [[FrogHole]] = []
     
@@ -18,13 +18,13 @@ struct GameBoard {
         return _cells
     }
     
-    init(size: GameBoardSize) {
+    init(size: BoardSize) {
         self.size = size
         _cells = [[FrogHole]](repeating: [FrogHole](repeating: FrogHole(), count: size.columns), count: size.rows)
     }
 }
 
-struct GameBoardSize {
+struct BoardSize {
     
     let rows: Int
     

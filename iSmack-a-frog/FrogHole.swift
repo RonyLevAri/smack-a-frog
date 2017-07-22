@@ -18,19 +18,20 @@ struct FrogHole {
         }
     }
     
-    mutating func changeStateRandomly() {
+    mutating func changeStateRandomly() -> FrogHoleState {
         _state = FrogHoleState.randomState()
+        return _state
     }
+}
+
+enum FrogHoleState {
+    case HittableAngryForg
+    case HittableContagiousFrog
+    case NonHittableNoFrog
     
-    enum FrogHoleState {
-        case HittableAngryForg
-        case HittableContagiousFrog
-        case NonHittableNoFrog
-        
-        static func randomState() -> FrogHoleState {
-            let allValues = [HittableAngryForg, HittableContagiousFrog, NonHittableNoFrog]
-            let index = Int(arc4random_uniform(UInt32(allValues.count)))
-            return allValues[index]
-        }
+    static func randomState() -> FrogHoleState {
+        let allValues = [HittableAngryForg, HittableContagiousFrog, NonHittableNoFrog]
+        let index = Int(arc4random_uniform(UInt32(allValues.count)))
+        return allValues[index]
     }
 }
