@@ -8,33 +8,20 @@
 
 import UIKit
 
-protocol GameCellViewDelegate {
-    func updateCellState(forCell: GameCellView)
-}
-
 class GameCellView: UICollectionViewCell {
     
     @IBOutlet weak var frogImage: UIImageView!
     
-    var delegate: GameCellViewDelegate? = nil
+    // var frogState: FrogHoleState = .NonHittableNoFrog { didSet { setNeedsDisplay() } }
     
-    // var showFrog: Bool = false { didSet { setNeedsDisplay() } }
+    // var _withFrog: Bool = false { didSet { setNeedsDisplay() } }
     
-    //override func draw(_ rect: CGRect) {
-        // Drawing code
-    //}
-    
-    override func awakeFromNib() {
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.updateState (_:)))
-        self.addGestureRecognizer(gesture)
-    }
-    
-    func updateState(_ sender:UITapGestureRecognizer) {
-        delegate?.updateCellState(forCell: self)
-    }
-    
-    
-
-    
-    
+//    var withFrog: Bool {
+//        get {
+//            return _withFrog
+//        }
+//        set {
+//            _withFrog = newValue
+//        }
+//    }
 }
