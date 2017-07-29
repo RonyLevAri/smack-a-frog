@@ -32,12 +32,28 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         gameBoardCollectionView.dataSource = self
         gameBoardCollectionView.delegate = self
-        scores.text = gameConfig.difficulty.rawValue
+        
+        scores.text = String(0)
+        
         cellsPerRow = CGFloat(gameConfig.boardSize.columns)
         cellsPerColumn = CGFloat(gameConfig.boardSize.rows)
-        game = Game(gameConfig: gameConfig, board: GameBoard(size: gameConfig.boardSize))
+        
+        
+        let timerController = BoardTimerController(
+            size: gameConfig.boardSize,
+            gameConfig: gameConfig
+        )
+        game = Game(
+            gameConfig: gameConfig,
+            board: GameBoard(size: gameConfig.boardSize),
+            timerController: timerController
+        )
+        timerController.delegate = game
+        game.delegate = self
+        game.startGame()
     }
 }
 
@@ -55,15 +71,7 @@ extension GameViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let gameCell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameCellView
-        gameCell.delegate = self
         return gameCell
-    }
-}
-
-extension GameViewController: GameCellViewDelegate {
-    func updateCellState(forCell: GameCellView) {
-        print("hello")
-        forCell.frogImage.image = UIImage(named: "toon_mean_frog")!
     }
 }
 
@@ -87,10 +95,11 @@ extension GameViewController: UICollectionViewDelegate {
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(indexPath.section)
-//        print(indexPath.item)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("cell \(indexPath.section), \(indexPath.item) was tapped")
+        game.cellTappedAt(row: indexPath.section, column: indexPath.item)
+        
+    }
 }
 
 extension GameViewController: UICollectionViewDelegateFlowLayout {
@@ -118,5 +127,15 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension GameViewController: GameDelegate {
+    func updatePoints(_ points: Int) {
+        scores.text = String(points)
+    }
+    
+    func updateCelltAt(_ row: Int, _ column: Int) {
+        gameBoardCollectionView.reloadItems(at: [IndexPath(item: column, section: row)])
     }
 }

@@ -22,6 +22,18 @@ struct GameBoard {
         self.size = size
         _cells = [[FrogHole]](repeating: [FrogHole](repeating: FrogHole(), count: size.columns), count: size.rows)
     }
+    
+    func getCellStateAt(_ row: Int, _ column: Int) -> FrogHoleState {
+        return _cells[row][column].state
+    }
+    
+    mutating func resetCellAt(_ row: Int, _ column: Int) {
+        _cells[row][column].resetToNonHittable()
+    }
+    
+    mutating func activateCellAt(_ row: Int, _ column: Int) {
+        _cells[row][column].changeStateRandomly()
+    }
 }
 
 struct BoardSize {

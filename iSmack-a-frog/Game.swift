@@ -8,28 +8,50 @@
 
 import Foundation
 
+protocol GameDelegate: class {
+    func updatePoints(_ points: Int)
+    func updateCelltAt(_ row: Int, _ column: Int)
+}
+
 class Game: NSObject {
     
-    private let gameConfig: GameConfig
+    private let _gameConfig: GameConfig
     
-    private var playerState = PlayerGameState()
+    private var _playerState = PlayerGameState()
     
-    private weak var gameTimer: Timer?
+    private weak var _gameTimer: Timer?
     
-    private var _board: GameBoard
+    weak var delegate: GameDelegate?
+    
+    fileprivate var _board: GameBoard
+    
+    private var _boardTimersController: BoardTimerController
     
     var board: GameBoard {
         return _board
     }
     
-    init(gameConfig: GameConfig, board: GameBoard) {
-        self.gameConfig = gameConfig
+    init(gameConfig: GameConfig, board: GameBoard, timerController: BoardTimerController) {
+        self._gameConfig = gameConfig
         self._board = board
+        self._boardTimersController = timerController
     }
     
     func startGame() {
-        gameTimer = Timer.scheduledTimer(
-            timeInterval: gameConfig.gameIntervalInSeconds,
+        print("counting till 3 before starting the game")
+        _gameTimer = Timer.scheduledTimer(
+            timeInterval: _gameConfig.delayBeforeStartingTheGame,
+            target: self,
+            selector: #selector(Game.startGameCountdowon),
+            userInfo: nil,
+            repeats: false)
+    }
+    
+    func startGameCountdowon() {
+        print("starting the game")
+        _boardTimersController.start()
+        _gameTimer = Timer.scheduledTimer(
+            timeInterval: _gameConfig.gameIntervalInSeconds,
             target: self,
             selector: #selector(Game.stopGame),
             userInfo: nil,
@@ -37,16 +59,45 @@ class Game: NSObject {
     }
     
     func stopGame() {
-        gameTimer?.invalidate()
+        print("finishing game")
+        _boardTimersController.stop()
     }
     
-    private func balancePoints(_ points: Int) {
-        playerState.points = points
+    func cellTappedAt(row: Int, column: Int) {
+        
+        let isTimerRunning = _boardTimersController.isTimerRunnindAt(row: row, column: column)
+        print("isTimerRunning = \(isTimerRunning)")
+        
+        if isTimerRunning {
+            let state = _board.getCellStateAt(row, column)
+            
+            switch state {
+            case .HittableAngryForg:
+                addpoints()
+            case .HittableContagiousFrog:
+                takeLife()
+            case .NonHittableNoFrog:
+                break
+            }
+            
+            _board.resetCellAt(row, column)
+            _boardTimersController.resetTimerAt(row: row, column: column)
+            delegate?.updateCelltAt(row, column)
+        }
+    }
+    
+    private func addpoints() {
+        _playerState.points += 1
+        delegate?.updatePoints(_playerState.points)
+    }
+    
+    private func takeLife() {
+        print("falied to tap")
     }
     
     var gamePoints: Int {
         get {
-            return playerState.points
+            return _playerState.points
         }
     }
     
@@ -61,7 +112,18 @@ class Game: NSObject {
         case Hit
         case Pannelty
     }
+}
+
+extension Game: BoardTimerControllerDelegate {
+    func activationTimerGotSetAt(_ row: Int, _ column: Int) {
+        _board.activateCellAt(row, column)
+        delegate?.updateCelltAt(row, column)
+    }
     
+    func  latencyTimerGotSetAt(_ row: Int, _ column: Int) {
+        _board.resetCellAt(row, column)
+        delegate?.updateCelltAt(row, column)
+    }
 }
 
 struct PositionOnBoard {
