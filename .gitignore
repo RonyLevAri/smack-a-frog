@@ -47,3 +47,8 @@ Carthage/Build
 
 # OS X
 *.DS_Store
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+MyPlayground.playground*
