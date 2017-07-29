@@ -18,9 +18,12 @@ struct FrogHole {
         }
     }
     
-    mutating func changeStateRandomly() -> FrogHoleState {
+    mutating func changeStateRandomly() {
         _state = FrogHoleState.randomState()
-        return _state
+    }
+    
+    mutating func resetToNonHittable() {
+        _state = FrogHoleState.NonHittableNoFrog
     }
 }
 
