@@ -14,10 +14,18 @@ struct GameConfig {
     let maxMisses = 3
     let maxShake = 3
     let gameIntervalInSeconds = 60.0
-    let minTimeFrogAppearsOnScreen = 1.5
+    let minTimeFrogAppearsOnScreen = 2.0
     let maxTimeFrogAppearsOnScreen = 4.0
+    var timeTargetAppersOnScreen: Range<Double> {
+        get {
+            return minTimeFrogAppearsOnScreen..<maxTimeFrogAppearsOnScreen
+        }
+    }
     let delayBeforeStartingTheGame = 3.0
     let boardSize: BoardSize
+    lazy var latencyBetweenTimers: Range<Double> = {
+        return self.calcLatencyBasedOnDifficulty()
+    }()
     
     init(difficulty: GameDifficulty, boardSize: BoardSize) {
         self.difficulty = difficulty
@@ -35,6 +43,22 @@ struct GameConfig {
                 return 2.0
             }
         }
+    }
+    
+    private func calcLatencyBasedOnDifficulty() -> Range<Double> {
+        
+        var range: Range<Double>
+        
+        switch difficulty {
+        case .Easy:
+            range = 4.0..<7.0
+        case .Normal:
+            range = 3.0..<6.0
+        case .Hard:
+            range = 2.0..<5.0
+        }
+        
+        return range
     }
     
 }
