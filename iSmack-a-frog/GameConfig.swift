@@ -51,7 +51,7 @@ struct GameConfig {
         
         switch difficulty {
         case .Easy:
-            range = 6.0..<30.0
+            range = 0.0..<30.0
         case .Normal:
             range = 0.0..<20.0
         case .Hard:

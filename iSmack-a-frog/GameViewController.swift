@@ -138,4 +138,20 @@ extension GameViewController: GameDelegate {
     func updateCelltAt(_ row: Int, _ column: Int) {
         gameBoardCollectionView.reloadItems(at: [IndexPath(item: column, section: row)])
     }
+    
+    func updateLivesLeft(_ lives: Int) {
+        
+        let image = UIImage(named: "x-death")
+        
+        if lives == 0 {
+            life1.image = image
+            life2.image = image
+            life3.image = image
+        } else if lives  == 1 {
+            life1.image = image
+            life2.image = image
+        } else if lives == 2 {
+            life1.image = image
+        }
+    }
 }

@@ -11,6 +11,7 @@ import Foundation
 protocol GameDelegate: class {
     func updatePoints(_ points: Int)
     func updateCelltAt(_ row: Int, _ column: Int)
+    func updateLivesLeft(_ lives: Int)
 }
 
 class Game: NSObject {
@@ -61,6 +62,8 @@ class Game: NSObject {
     func stopGame() {
         print("finishing game")
         _boardTimersController.stop()
+        _gameTimer?.invalidate()
+        _gameTimer = nil
     }
     
     func cellTappedAt(row: Int, column: Int) {
@@ -91,8 +94,12 @@ class Game: NSObject {
         delegate?.updatePoints(_playerState.points)
     }
     
-    private func takeLife() {
-        print("falied to tap")
+    fileprivate func takeLife() {
+        _playerState.lives -= 1
+        delegate?.updateLivesLeft(_playerState.lives)
+        if _playerState.lives == 0 {
+            stopGame()
+        }
     }
     
     var gamePoints: Int {
@@ -102,16 +109,11 @@ class Game: NSObject {
     }
     
     private struct PlayerGameState {
-        var misses = 0
+        var lives = 3
         var points = 0
         var useOfShake = 0
     }
-    
-    private enum SmackStatus {
-        case Miss
-        case Hit
-        case Pannelty
-    }
+
 }
 
 extension Game: BoardTimerControllerDelegate {
@@ -121,19 +123,14 @@ extension Game: BoardTimerControllerDelegate {
     }
     
     func  latencyTimerGotSetAt(_ row: Int, _ column: Int) {
+        let currenCellState = _board.getCellStateAt(row, column)
+        if currenCellState == .HittableAngryForg {
+           takeLife()
+        }
         _board.resetCellAt(row, column)
         delegate?.updateCelltAt(row, column)
     }
 }
 
-struct PositionOnBoard {
-    let row: Int
-    let column: Int
-    
-    init(row: Int, column: Int) {
-        self.row = row
-        self.column = column
-    }
-}
 
 

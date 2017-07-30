@@ -64,7 +64,7 @@ class BoardTimerController: NSObject {
         let row = dict?["row"] as! Int
         let column = dict?["column"] as! Int
         
-        _actionTimers[row][column] = nil
+//        _actionTimers[row][column] = nil
         reportLatencyAt(row, column)
         
         _latencyTimers[row][column] = generateTimerFor(latency: true, selector: #selector(BoardTimerController.activateActionTimerAt(timer:)), userInfo: ["row": row, "column": column])
