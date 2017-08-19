@@ -62,6 +62,13 @@ class GameViewController: UIViewController {
             //game.deviceShakened()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destGameController = segue.destination as? GameSummaryViewController {
+            let points = game.gamePoints
+            destGameController.points = points
+        }
+    }
 }
 
 extension GameViewController: UICollectionViewDataSource {
@@ -169,5 +176,6 @@ extension GameViewController: GameDelegate {
             }
         }
          //gameBoardCollectionView.reloadData()
+        performSegue(withIdentifier: "toGameSummary", sender: self)
     }
 }

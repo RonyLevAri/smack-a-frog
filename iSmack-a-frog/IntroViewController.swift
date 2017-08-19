@@ -73,7 +73,6 @@ class IntroViewController: UIViewController {
             let configuration = GameConfig(difficulty: difficulty, boardSize: BoardSize(rows: 5, columns: 3))
             destGameController.gameConfig = configuration
         }
-        
     }
     
 }
