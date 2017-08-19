@@ -24,19 +24,19 @@
 		5171E0E71F1D32F700E9ED65 /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */; };
 		5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E81F1D46D800E9ED65 /* FrogHole.swift */; };
 		5173787A1F21463D00B963B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517378791F21463D00B963B0 /* Assets.xcassets */; };
-		517378831F21471700B963B0 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787B1F21471600B963B0 /* star_2.png */; };
-		517378841F21471700B963B0 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787C1F21471600B963B0 /* Star.png */; };
-		517378851F21471700B963B0 /* toon_frog_nobackground_croped.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */; };
-		517378861F21471700B963B0 /* toon_frog_nobackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */; };
-		517378871F21471700B963B0 /* toon_mean_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173787F1F21471600B963B0 /* toon_mean_frog.png */; };
-		517378881F21471700B963B0 /* toon_shocked_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378801F21471600B963B0 /* toon_shocked_frog.png */; };
-		517378891F21471700B963B0 /* toon_sick_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378811F21471600B963B0 /* toon_sick_frog.png */; };
-		5173788A1F21471700B963B0 /* x-death.png in Resources */ = {isa = PBXBuildFile; fileRef = 517378821F21471600B963B0 /* x-death.png */; };
-		5173788D1F21472300B963B0 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788B1F21472300B963B0 /* blue_star.png */; };
-		5173788E1F21472300B963B0 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788C1F21472300B963B0 /* hole.png */; };
-		517378901F21475300B963B0 /* x-life.png in Resources */ = {isa = PBXBuildFile; fileRef = 5173788F1F21475300B963B0 /* x-life.png */; };
 		517378921F2BF15000B963B0 /* BoardTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517378911F2BF15000B963B0 /* BoardTimeController.swift */; };
 		517E84F01F489F480036D7A8 /* GameSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */; };
+		517E85111F48B05E0036D7A8 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85071F48B05E0036D7A8 /* hole.png */; };
+		517E85121F48B05E0036D7A8 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85081F48B05E0036D7A8 /* star_2.png */; };
+		517E85131F48B05E0036D7A8 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85091F48B05E0036D7A8 /* Star.png */; };
+		517E85141F48B05E0036D7A8 /* toon_frog_nobackground_croped.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850A1F48B05E0036D7A8 /* toon_frog_nobackground_croped.png */; };
+		517E85151F48B05E0036D7A8 /* toon_frog_nobackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850B1F48B05E0036D7A8 /* toon_frog_nobackground2.png */; };
+		517E85161F48B05E0036D7A8 /* toon_mean_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850C1F48B05E0036D7A8 /* toon_mean_frog.png */; };
+		517E85171F48B05E0036D7A8 /* toon_shocked_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850D1F48B05E0036D7A8 /* toon_shocked_frog.png */; };
+		517E85181F48B05E0036D7A8 /* toon_sick_frog.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850E1F48B05E0036D7A8 /* toon_sick_frog.png */; };
+		517E85191F48B05E0036D7A8 /* x-death.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850F1F48B05E0036D7A8 /* x-death.png */; };
+		517E851A1F48B05E0036D7A8 /* x-life.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85101F48B05E0036D7A8 /* x-life.png */; };
+		517E851C1F48B0FC0036D7A8 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E851B1F48B0FC0036D7A8 /* blue_star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,19 +80,19 @@
 		5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
 		5171E0E81F1D46D800E9ED65 /* FrogHole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrogHole.swift; sourceTree = "<group>"; };
 		517378791F21463D00B963B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5173787B1F21471600B963B0 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
-		5173787C1F21471600B963B0 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
-		5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground_croped.png; sourceTree = "<group>"; };
-		5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground2.png; sourceTree = "<group>"; };
-		5173787F1F21471600B963B0 /* toon_mean_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_mean_frog.png; sourceTree = "<group>"; };
-		517378801F21471600B963B0 /* toon_shocked_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_shocked_frog.png; sourceTree = "<group>"; };
-		517378811F21471600B963B0 /* toon_sick_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_sick_frog.png; sourceTree = "<group>"; };
-		517378821F21471600B963B0 /* x-death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-death.png"; sourceTree = "<group>"; };
-		5173788B1F21472300B963B0 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
-		5173788C1F21472300B963B0 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
-		5173788F1F21475300B963B0 /* x-life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-life.png"; sourceTree = "<group>"; };
 		517378911F2BF15000B963B0 /* BoardTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTimeController.swift; sourceTree = "<group>"; };
 		517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSummaryViewController.swift; sourceTree = "<group>"; };
+		517E85071F48B05E0036D7A8 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		517E85081F48B05E0036D7A8 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
+		517E85091F48B05E0036D7A8 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		517E850A1F48B05E0036D7A8 /* toon_frog_nobackground_croped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground_croped.png; sourceTree = "<group>"; };
+		517E850B1F48B05E0036D7A8 /* toon_frog_nobackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_frog_nobackground2.png; sourceTree = "<group>"; };
+		517E850C1F48B05E0036D7A8 /* toon_mean_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_mean_frog.png; sourceTree = "<group>"; };
+		517E850D1F48B05E0036D7A8 /* toon_shocked_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_shocked_frog.png; sourceTree = "<group>"; };
+		517E850E1F48B05E0036D7A8 /* toon_sick_frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toon_sick_frog.png; sourceTree = "<group>"; };
+		517E850F1F48B05E0036D7A8 /* x-death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-death.png"; sourceTree = "<group>"; };
+		517E85101F48B05E0036D7A8 /* x-life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-life.png"; sourceTree = "<group>"; };
+		517E851B1F48B0FC0036D7A8 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,17 +123,6 @@
 		5171E0721F11618F00E9ED65 = {
 			isa = PBXGroup;
 			children = (
-				5173788B1F21472300B963B0 /* blue_star.png */,
-				5173788C1F21472300B963B0 /* hole.png */,
-				5173787B1F21471600B963B0 /* star_2.png */,
-				5173787C1F21471600B963B0 /* Star.png */,
-				5173787D1F21471600B963B0 /* toon_frog_nobackground_croped.png */,
-				5173787E1F21471600B963B0 /* toon_frog_nobackground2.png */,
-				5173788F1F21475300B963B0 /* x-life.png */,
-				5173787F1F21471600B963B0 /* toon_mean_frog.png */,
-				517378801F21471600B963B0 /* toon_shocked_frog.png */,
-				517378811F21471600B963B0 /* toon_sick_frog.png */,
-				517378821F21471600B963B0 /* x-death.png */,
 				5171E0AC1F116AC100E9ED65 /* .gitignore */,
 				5171E07D1F11618F00E9ED65 /* iSmack-a-frog */,
 				5171E0921F11618F00E9ED65 /* iSmack-a-frogTests */,
@@ -155,6 +144,17 @@
 		5171E07D1F11618F00E9ED65 /* iSmack-a-frog */ = {
 			isa = PBXGroup;
 			children = (
+				517E851B1F48B0FC0036D7A8 /* blue_star.png */,
+				517E85071F48B05E0036D7A8 /* hole.png */,
+				517E85081F48B05E0036D7A8 /* star_2.png */,
+				517E85091F48B05E0036D7A8 /* Star.png */,
+				517E850A1F48B05E0036D7A8 /* toon_frog_nobackground_croped.png */,
+				517E850B1F48B05E0036D7A8 /* toon_frog_nobackground2.png */,
+				517E850C1F48B05E0036D7A8 /* toon_mean_frog.png */,
+				517E850D1F48B05E0036D7A8 /* toon_shocked_frog.png */,
+				517E850E1F48B05E0036D7A8 /* toon_sick_frog.png */,
+				517E850F1F48B05E0036D7A8 /* x-death.png */,
+				517E85101F48B05E0036D7A8 /* x-life.png */,
 				5171E07E1F11618F00E9ED65 /* AppDelegate.swift */,
 				5171E0801F11618F00E9ED65 /* IntroViewController.swift */,
 				5171E0D21F16AD9100E9ED65 /* GameViewController.swift */,
@@ -301,21 +301,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				517378871F21471700B963B0 /* toon_mean_frog.png in Resources */,
+				517E85121F48B05E0036D7A8 /* star_2.png in Resources */,
+				517E85131F48B05E0036D7A8 /* Star.png in Resources */,
 				5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */,
-				517378861F21471700B963B0 /* toon_frog_nobackground2.png in Resources */,
-				5173788E1F21472300B963B0 /* hole.png in Resources */,
+				517E851C1F48B0FC0036D7A8 /* blue_star.png in Resources */,
+				517E85181F48B05E0036D7A8 /* toon_sick_frog.png in Resources */,
+				517E85141F48B05E0036D7A8 /* toon_frog_nobackground_croped.png in Resources */,
+				517E85111F48B05E0036D7A8 /* hole.png in Resources */,
 				5171E0891F11618F00E9ED65 /* LaunchScreen.storyboard in Resources */,
-				517378851F21471700B963B0 /* toon_frog_nobackground_croped.png in Resources */,
-				5173788A1F21471700B963B0 /* x-death.png in Resources */,
-				5173788D1F21472300B963B0 /* blue_star.png in Resources */,
 				5173787A1F21463D00B963B0 /* Assets.xcassets in Resources */,
-				517378891F21471700B963B0 /* toon_sick_frog.png in Resources */,
-				517378841F21471700B963B0 /* Star.png in Resources */,
+				517E851A1F48B05E0036D7A8 /* x-life.png in Resources */,
+				517E85171F48B05E0036D7A8 /* toon_shocked_frog.png in Resources */,
+				517E85191F48B05E0036D7A8 /* x-death.png in Resources */,
 				5171E0841F11618F00E9ED65 /* Main.storyboard in Resources */,
-				517378831F21471700B963B0 /* star_2.png in Resources */,
-				517378881F21471700B963B0 /* toon_shocked_frog.png in Resources */,
-				517378901F21475300B963B0 /* x-life.png in Resources */,
+				517E85161F48B05E0036D7A8 /* toon_mean_frog.png in Resources */,
+				517E85151F48B05E0036D7A8 /* toon_frog_nobackground2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
