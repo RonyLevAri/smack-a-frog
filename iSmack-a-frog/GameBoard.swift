@@ -23,8 +23,18 @@ struct GameBoard {
         _cells = [[FrogHole]](repeating: [FrogHole](repeating: FrogHole(), count: size.columns), count: size.rows)
     }
     
-    func getCellStateAt(_ row: Int, _ column: Int) -> FrogHoleState {
+    mutating func getCellStateAt(_ row: Int, _ column: Int) -> FrogHoleState {
         return _cells[row][column].state
+    }
+    
+    mutating func resetAllCells() {
+        
+        for row in 0..<_cells.count {
+            for column in 0..<_cells[row].count {
+                print("board is reseting cell \(row), \(column)")
+                resetCellAt(row, column)
+            }
+        }
     }
     
     mutating func resetCellAt(_ row: Int, _ column: Int) {

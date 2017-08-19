@@ -9,110 +9,89 @@
 import Foundation
 
 protocol BoardTimerControllerDelegate: class {
-    func activationTimerGotSetAt(_ row: Int, _ column: Int)
-    func latencyTimerGotSetAt(_ row: Int, _ column: Int)
+    func cellTimerRunningAt(_ row: Int, _ column: Int)
+    func cellTimerIdleAt(_ row: Int, _ column: Int)
 }
 
 class BoardTimerController: NSObject {
     
-    private var _actionTimers: [[Timer?]] = []
+    private lazy var _flipFlopTimers: [[FlipFlopTimer]] = { [unowned self] in
+        
+        let idle = self.gameConfig.latencyBetweenTimers
+        let running = self.gameConfig.timeTargetAppersOnScreen
+        
+        var timers = [[FlipFlopTimer]]()
+        
+        for row in 0..<self.size.rows {
+            
+            var timerRow = [FlipFlopTimer]()
+            
+            for column in 0..<self.size.columns {
+                var timer = FlipFlopTimer(row: row, column: column, withIdleIntervalRange: idle, withRunningIntervalRange: running)
+                timer.timerDelegate = self
+                timerRow.append(timer)
+            }
+            timers.append(timerRow)
+        }
+        return timers
+    }()
     
-    private var _latencyTimers: [[Timer?]] = []
-    
-    weak var delegate: BoardTimerControllerDelegate? = nil
+    weak var delegate: BoardTimerControllerDelegate?
     
     private var gameConfig: GameConfig
     
+    var isOnTimePanelty = false
+    
+    var isOnTimeBonus = false
+    
+    let size: BoardSize
+    
     init(size: BoardSize, gameConfig: GameConfig) {
+        self.size = size
         self.gameConfig = gameConfig
-        self._actionTimers = [[Timer?]](repeating: [Timer?](repeating: nil, count: size.columns), count: size.rows)
-        self._latencyTimers = [[Timer?]](repeating: [Timer?](repeating: nil, count: size.columns), count: size.rows)
     }
     
     func start() {
-        initializeLatencyTimers()
+        initializeTimers()
     }
     
     func stop() {
         invalidateTimers()
     }
     
-    private func initializeLatencyTimers() {
-        
-        for row in 0..<_latencyTimers.count {
-            for column in 0..<_latencyTimers[row].count {
-                _latencyTimers[row][column] = generateTimerFor(latency: true, selector: #selector(BoardTimerController.activateActionTimerAt(timer:)), userInfo: ["row": row, "column": column])
+    func initializeTimers() {
+        for row in 0..<size.rows {
+            for column in 0..<size.columns {
+                _flipFlopTimers[row][column].start()
             }
         }
-    }
-    
-    func activateActionTimerAt(timer: Timer) {
-        
-        let dict = timer.userInfo as! [String : Any]
-        let row = dict["row"] as! Int
-        let column = dict["column"] as! Int
-        
-        reportActivationChangeAt(row, column)
-        
-        _actionTimers[row][column] = generateTimerFor(latency: false, selector: #selector(BoardTimerController.activateLatencyTimerAt(timer:)), userInfo: ["row": row, "column": column])
-        
-    }
-    
-    func activateLatencyTimerAt(timer: Timer) {
-        
-        let dict = timer.userInfo as? [String : Any]
-        let row = dict?["row"] as! Int
-        let column = dict?["column"] as! Int
-        
-//        _actionTimers[row][column] = nil
-        reportLatencyAt(row, column)
-        
-        _latencyTimers[row][column] = generateTimerFor(latency: true, selector: #selector(BoardTimerController.activateActionTimerAt(timer:)), userInfo: ["row": row, "column": column])
     }
     
     private func invalidateTimers() {
         
-        for row in 0..<_latencyTimers.count {
-            for column in 0..<_latencyTimers[row].count {
-                if let latencyTimer = _latencyTimers[row][column] {
-                    latencyTimer.invalidate()
-                }
-                if let activationTimer = _actionTimers[row][column] {
-                    activationTimer.invalidate()
-                }
-                _latencyTimers[row][column] = nil
-                _actionTimers[row][column] = nil
+        for row in 0..<size.rows {
+            for column in 0..<size.columns {
+                print("timer controller is invalidating timer at \(row), \(column)")
+                _flipFlopTimers[row][column].stop()
             }
         }
     }
     
-    func resetTimerAt(row: Int, column: Int) {
-        _actionTimers[row][column] = nil
+    func resetTimerAt(_ row: Int, _ column: Int) {
+        _flipFlopTimers[row][column].reset()
     }
     
-    func isTimerRunnindAt(row: Int, column: Int) -> Bool {
-        return _actionTimers[row][column] != nil
+}
+
+extension BoardTimerController: FliFlopTimerDelegate {
+    
+    func timerRunningAt(_ row: Int, _ column: Int) {
+        // print("timer controller recieved a message that \(row) \(column) is running")
+        self.delegate?.cellTimerRunningAt(row, column)
     }
     
-    private func reportActivationChangeAt(_ row: Int, _ column: Int) {
-        delegate?.activationTimerGotSetAt(row, column)
+    func timerIdleAt(_ row: Int, _ column: Int) {
+        // print("timer controller recieved a message that \(row) \(column) is idle")
+        self.delegate?.cellTimerIdleAt(row, column)
     }
-    
-    private func reportLatencyAt(_ row: Int, _ column: Int) {
-        _actionTimers[row][column] = nil
-        delegate?.latencyTimerGotSetAt(row, column)
-    }
-    
-    private func generateTimerFor(latency: Bool, selector: Selector, userInfo: [String : Int]) -> Timer {
-        
-        let interval = latency ? gameConfig.latencyBetweenTimers : gameConfig.timeTargetAppersOnScreen
-        
-        return Timer.scheduledTimer(
-            timeInterval: Utils.random(interval),
-            target: self,
-            selector: selector,
-            userInfo: userInfo,
-            repeats: false)
-    }
-    
 }

@@ -16,6 +16,7 @@ struct GameConfig {
     let gameIntervalInSeconds = 60.0
     let minTimeFrogAppearsOnScreen = 2.0
     let maxTimeFrogAppearsOnScreen = 4.0
+    let delayPanelty = 3.0
     var timeTargetAppersOnScreen: Range<Double> {
         get {
             return minTimeFrogAppearsOnScreen..<maxTimeFrogAppearsOnScreen

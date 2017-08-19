@@ -12,6 +12,7 @@ protocol GameDelegate: class {
     func updatePoints(_ points: Int)
     func updateCelltAt(_ row: Int, _ column: Int)
     func updateLivesLeft(_ lives: Int)
+    func updateAllCells()
 }
 
 class Game: NSObject {
@@ -39,7 +40,7 @@ class Game: NSObject {
     }
     
     func startGame() {
-        print("counting till 3 before starting the game")
+        print("game is counting till 3 before starting the game")
         _gameTimer = Timer.scheduledTimer(
             timeInterval: _gameConfig.delayBeforeStartingTheGame,
             target: self,
@@ -49,7 +50,7 @@ class Game: NSObject {
     }
     
     func startGameCountdowon() {
-        print("starting the game")
+        print("game is starting the game")
         _boardTimersController.start()
         _gameTimer = Timer.scheduledTimer(
             timeInterval: _gameConfig.gameIntervalInSeconds,
@@ -60,44 +61,54 @@ class Game: NSObject {
     }
     
     func stopGame() {
-        print("finishing game")
-        _boardTimersController.stop()
+        print("game is stopping game")
         _gameTimer?.invalidate()
-        _gameTimer = nil
+        _boardTimersController.stop()
+        _board.resetAllCells()
+        delegate?.updateAllCells()
     }
     
     func cellTappedAt(row: Int, column: Int) {
         
-        let isTimerRunning = _boardTimersController.isTimerRunnindAt(row: row, column: column)
-        print("isTimerRunning = \(isTimerRunning)")
+        print("game recieved tapping action on cell \(row) \(column)")
         
-        if isTimerRunning {
-            let state = _board.getCellStateAt(row, column)
+        let state = _board.getCellStateAt(row, column)
             
-            switch state {
-            case .HittableAngryForg:
-                addpoints()
-            case .HittableContagiousFrog:
-                takeLife()
-            case .NonHittableNoFrog:
-                break
-            }
-            
-            _board.resetCellAt(row, column)
-            _boardTimersController.resetTimerAt(row: row, column: column)
-            delegate?.updateCelltAt(row, column)
+        switch state {
+        case .HittableAngryForg:
+            addpoints()
+            resetCellAndTimerAt(row, column)
+        case .HittableContagiousFrog:
+            takeLife()
+            resetCellAndTimerAt(row, column)
+        case .NonHittableNoFrog:
+            break
         }
     }
     
+    private func resetCellAndTimerAt(_ row: Int, _ column: Int) {
+        //print("game reset timer  \(row) \(column) after tapping")
+        _boardTimersController.resetTimerAt(row, column)
+        _board.resetCellAt(row, column)
+        delegate?.updateCelltAt(row, column)
+    }
+    
+    
     private func addpoints() {
+        print("game adding points for tapping")
         _playerState.points += 1
         delegate?.updatePoints(_playerState.points)
+        if _playerState.points >= 30 {
+            stopGame()
+        }
     }
     
     fileprivate func takeLife() {
+        print("game taking life for tapping")
         _playerState.lives -= 1
         delegate?.updateLivesLeft(_playerState.lives)
         if _playerState.lives == 0 {
+            print("game stopping game because life ended")
             stopGame()
         }
     }
@@ -111,22 +122,20 @@ class Game: NSObject {
     private struct PlayerGameState {
         var lives = 3
         var points = 0
-        var useOfShake = 0
+        var shakes = 3
     }
 
 }
 
 extension Game: BoardTimerControllerDelegate {
-    func activationTimerGotSetAt(_ row: Int, _ column: Int) {
+    func cellTimerRunningAt(_ row: Int, _ column: Int) {
+        // print("game recieved a message that \(row) \(column) is running")
         _board.activateCellAt(row, column)
         delegate?.updateCelltAt(row, column)
     }
     
-    func  latencyTimerGotSetAt(_ row: Int, _ column: Int) {
-        let currenCellState = _board.getCellStateAt(row, column)
-        if currenCellState == .HittableAngryForg {
-           takeLife()
-        }
+    func  cellTimerIdleAt(_ row: Int, _ column: Int) {
+        // print("game recieved a message that \(row) \(column) is idle")
         _board.resetCellAt(row, column)
         delegate?.updateCelltAt(row, column)
     }

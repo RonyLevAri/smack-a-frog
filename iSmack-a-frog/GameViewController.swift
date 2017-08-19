@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
         gameBoardCollectionView.dataSource = self
         gameBoardCollectionView.delegate = self
         
-        scores.text = String(0)
+        scores.text = "Points: " + String(0)
         
         cellsPerRow = CGFloat(gameConfig.boardSize.columns)
         cellsPerColumn = CGFloat(gameConfig.boardSize.rows)
@@ -54,6 +54,13 @@ class GameViewController: UIViewController {
         timerController.delegate = game
         game.delegate = self
         game.startGame()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("device shaken")
+            //game.deviceShakened()
+        }
     }
 }
 
@@ -80,11 +87,12 @@ extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = cell as! GameCellView
         let cellState = game.board.cells[indexPath.section][indexPath.item].state
-        cell.frogImage.image = frogHolaStateToImage(state: cellState)
+        cell.frogImage.image = frogHoleStateToImage(state: cellState)
         
     }
     
-    private func frogHolaStateToImage(state: FrogHoleState) -> UIImage? {
+    private func frogHoleStateToImage(state: FrogHoleState) -> UIImage? {
+        print("the frog hole state is: \(state)")
         switch state {
         case .HittableAngryForg:
             return UIImage(named: "toon_mean_frog")!
@@ -96,7 +104,7 @@ extension GameViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell \(indexPath.section), \(indexPath.item) was tapped")
+        print("cell tappedt at \(indexPath.section) \(indexPath.item)")
         game.cellTappedAt(row: indexPath.section, column: indexPath.item)
         
     }
@@ -132,10 +140,11 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 
 extension GameViewController: GameDelegate {
     func updatePoints(_ points: Int) {
-        scores.text = String(points)
+        scores.text = "Points: " + String(points)
     }
     
     func updateCelltAt(_ row: Int, _ column: Int) {
+        print("view controller updating cell at \(row) \(column)")
         gameBoardCollectionView.reloadItems(at: [IndexPath(item: column, section: row)])
     }
     
@@ -144,14 +153,21 @@ extension GameViewController: GameDelegate {
         let image = UIImage(named: "x-death")
         
         if lives == 0 {
-            life1.image = image
-            life2.image = image
             life3.image = image
         } else if lives  == 1 {
-            life1.image = image
             life2.image = image
         } else if lives == 2 {
             life1.image = image
         }
+    }
+    
+    func updateAllCells() {
+        print("reloading all cells")
+        for row in 0..<game.board.size.rows {
+            for column in 0..<game.board.size.columns {
+                updateCelltAt(row, column)
+            }
+        }
+         //gameBoardCollectionView.reloadData()
     }
 }

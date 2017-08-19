@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		512002DD1F2CAA0B005FABC1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512002DC1F2CAA0B005FABC1 /* Utils.swift */; };
+		512002DF1F42756A005FABC1 /* FlipFlopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512002DE1F42756A005FABC1 /* FlipFlopTimer.swift */; };
 		5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E07E1F11618F00E9ED65 /* AppDelegate.swift */; };
 		5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0801F11618F00E9ED65 /* IntroViewController.swift */; };
 		5171E0841F11618F00E9ED65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5171E0821F11618F00E9ED65 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		512002DC1F2CAA0B005FABC1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		512002DE1F42756A005FABC1 /* FlipFlopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipFlopTimer.swift; sourceTree = "<group>"; };
 		5171E07B1F11618F00E9ED65 /* iSmack-a-frog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iSmack-a-frog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5171E07E1F11618F00E9ED65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5171E0801F11618F00E9ED65 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				5171E0D81F1AD66000E9ED65 /* Game.swift */,
 				5171E0E41F1D30E900E9ED65 /* GameBoard.swift */,
 				517378911F2BF15000B963B0 /* BoardTimeController.swift */,
+				512002DE1F42756A005FABC1 /* FlipFlopTimer.swift */,
 				512002DC1F2CAA0B005FABC1 /* Utils.swift */,
 				5171E0821F11618F00E9ED65 /* Main.storyboard */,
 				517378791F21463D00B963B0 /* Assets.xcassets */,
@@ -345,6 +348,7 @@
 				5171E0DB1F1AD66000E9ED65 /* GameConfig.swift in Sources */,
 				5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */,
 				5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */,
+				512002DF1F42756A005FABC1 /* FlipFlopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
