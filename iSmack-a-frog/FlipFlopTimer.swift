@@ -10,15 +10,23 @@ import Foundation
 
 protocol FliFlopTimerDelegate: class {
     func timerRunningAt(_ row: Int, _ column: Int)
-    func timerIdleAt(_ row: Int, _ column: Int)
+    func timerIdleAt(_ row: Int, _ column: Int) -> Bool
     
 }
 
 class FlipFlopTimer: NSObject {
 
     private var _state =  BinaryState.Idle
-    weak var offTimer: Timer?
-    weak var onTimer: Timer?
+    weak var offTimer: Timer? {
+        willSet {
+            offTimer?.invalidate()
+        }
+    }
+    weak var onTimer: Timer? {
+        willSet {
+            onTimer?.invalidate()
+        }
+    }
     private var randomInterval = 0.0
     private let idleIntervalRange: Range<Double>
     private let runningIntervalRange: Range<Double>
@@ -40,6 +48,8 @@ class FlipFlopTimer: NSObject {
     func stop() {
         offTimer?.invalidate()
         onTimer?.invalidate()
+
+        _state = .Stopped
     }
     
     func reset() {
@@ -48,6 +58,8 @@ class FlipFlopTimer: NSObject {
     }
     
     func runing() {
+        guard _state != .Stopped else { return }
+
         print("turining on timer \(row), \(column)")
         _state = BinaryState.Idle
         timerDelegate?.timerRunningAt(row, column)
@@ -58,6 +70,8 @@ class FlipFlopTimer: NSObject {
     }
     
     func idle() {
+        guard _state != .Stopped else { return }
+
         print("turining off \(row), \(column)")
         _state = BinaryState.Running
         timerDelegate?.timerIdleAt(row, column)
@@ -69,5 +83,6 @@ class FlipFlopTimer: NSObject {
     enum BinaryState:String {
         case Idle
         case Running
+        case Stopped
     }
 }

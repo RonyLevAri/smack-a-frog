@@ -28,6 +28,7 @@ class BoardTimerController: NSObject {
             
             for column in 0..<self.size.columns {
                 var timer = FlipFlopTimer(row: row, column: column, withIdleIntervalRange: idle, withRunningIntervalRange: running)
+                print("Creating timers: \(timer)")
                 timer.timerDelegate = self
                 timerRow.append(timer)
             }
@@ -73,6 +74,7 @@ class BoardTimerController: NSObject {
             for column in 0..<size.columns {
                 print("timer controller is invalidating timer at \(row), \(column)")
                 _flipFlopTimers[row][column].stop()
+                print("Stopping timers: \(_flipFlopTimers[row][column])")
             }
         }
     }
@@ -90,8 +92,9 @@ extension BoardTimerController: FliFlopTimerDelegate {
         self.delegate?.cellTimerRunningAt(row, column)
     }
     
-    func timerIdleAt(_ row: Int, _ column: Int) {
+    func timerIdleAt(_ row: Int, _ column: Int) -> Bool {
         // print("timer controller recieved a message that \(row) \(column) is idle")
         self.delegate?.cellTimerIdleAt(row, column)
+        return true
     }
 }

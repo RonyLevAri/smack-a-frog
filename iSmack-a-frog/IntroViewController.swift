@@ -12,6 +12,15 @@ import UIKit
 class IntroViewController: UIViewController {
     
     private var difficulty = GameDifficulty.Normal
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("I am in the view did load of the main game menu \(self)")
+    }
+    
+    deinit {
+        print("I am destroyed \(self)")
+    }
 
     @IBOutlet private weak var btnEasy: UIButton! {
         didSet {
@@ -69,7 +78,8 @@ class IntroViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destGameController = segue.destination as? GameViewController {
+        let destinationRoot = (segue.destination as? UINavigationController)?.viewControllers.first
+        if let destGameController = destinationRoot as? GameViewController {
             let configuration = GameConfig(difficulty: difficulty, boardSize: BoardSize(rows: 5, columns: 3))
             destGameController.gameConfig = configuration
         }

@@ -10,6 +10,10 @@ import UIKit
 
 
 class GameSummaryViewController: UIViewController {
+    
+    @IBAction func startNewGame(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     @IBOutlet weak var pointLabel: UILabel!
     
