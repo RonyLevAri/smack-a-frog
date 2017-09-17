@@ -86,15 +86,16 @@ class BoardTimerController: NSObject {
 }
 
 extension BoardTimerController: FliFlopTimerDelegate {
+
+
     
     func timerRunningAt(_ row: Int, _ column: Int) {
         // print("timer controller recieved a message that \(row) \(column) is running")
         self.delegate?.cellTimerRunningAt(row, column)
     }
     
-    func timerIdleAt(_ row: Int, _ column: Int) -> Bool {
+    func timerIdleAt(_ row: Int, _ column: Int) {
         // print("timer controller recieved a message that \(row) \(column) is idle")
         self.delegate?.cellTimerIdleAt(row, column)
-        return true
     }
 }

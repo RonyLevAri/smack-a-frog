@@ -155,6 +155,59 @@ extension GameViewController: GameDelegate {
         gameBoardCollectionView.reloadItems(at: [IndexPath(item: column, section: row)])
     }
     
+    func animateItemAt(_ row: Int, _ column: Int, for frogHoleState: FrogHoleState) {
+        let indexPath = IndexPath(item: column, section: row)
+        if let cell = gameBoardCollectionView.cellForItem(at: indexPath) as? GameCellView {
+            frogHoleState == .HittableContagiousFrog ? shakeAnimation(over: cell) : shootFromScreenAnnimation(over: cell)
+        }
+    }
+    
+    func shakeAnimation(over cell: GameCellView) {
+        // taken from: https://www.youtube.com/watch?v=DNr5D7DSMr8&t=746s
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 5
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: cell.frogImage.center.x - 4, y: cell.frogImage.center.y - 4))
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: cell.frogImage.center.x + 4, y: cell.frogImage.center.y + 4))
+        cell.frogImage.layer.add(animation, forKey: "position")
+    }
+    
+    func shootFromScreenAnnimation(over cell: GameCellView) {
+        let x = cell.frame.minX
+        let y = cell.frame.minY
+        let width = cell.frogImage.frame.width
+        let height = cell.frogImage.frame.height
+        let shockedToon = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+        shockedToon.image = UIImage(named: "toon_shocked_frog")
+        self.gameBoardCollectionView.addSubview(shockedToon)
+        cell.frogImage.image = nil
+        
+        let directions = [1.0, -1.0]
+        let index = Int(arc4random_uniform(UInt32(directions.count)))
+        let direction = directions[index]
+        
+        UIView.animateKeyframes(
+            withDuration: 1.0,
+            delay: 0,
+            options: [
+                .calculationModeCubic
+            ],
+            animations: {
+                shockedToon.alpha = 0.1
+                let xNew = Utils.random(0.0..<Double(self.gameBoardCollectionView.frame.width)) * direction
+                let yNew = Utils.random(0.0..<Double(self.gameBoardCollectionView.frame.width)) * direction
+                shockedToon.transform = CGAffineTransform(
+                    translationX: CGFloat(xNew),
+                    y: CGFloat(yNew)
+                    )
+            },
+            completion: { _ in
+                shockedToon.removeFromSuperview()
+            }
+        )
+    }
+    
     func updateLivesLeft(_ lives: Int) {
         
         let image = UIImage(named: "x-death")

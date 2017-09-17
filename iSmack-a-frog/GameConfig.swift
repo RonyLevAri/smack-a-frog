@@ -37,11 +37,11 @@ struct GameConfig {
         get {
             switch difficulty {
             case .Easy:
-                return 4.0
-            case .Normal:
                 return 3.0
+            case .Normal:
+                return 2.5
             case .Hard:
-                return 2.0
+                return 1.5
             }
         }
     }
@@ -52,11 +52,11 @@ struct GameConfig {
         
         switch difficulty {
         case .Easy:
-            range = 0.0..<30.0
-        case .Normal:
             range = 0.0..<20.0
+        case .Normal:
+            range = 0.0..<15.0
         case .Hard:
-            range = 0.0..<10.0
+            range = 0.0..<3.0
         }
         
         return range

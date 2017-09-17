@@ -10,7 +10,7 @@ import Foundation
 
 protocol FliFlopTimerDelegate: class {
     func timerRunningAt(_ row: Int, _ column: Int)
-    func timerIdleAt(_ row: Int, _ column: Int) -> Bool
+    func timerIdleAt(_ row: Int, _ column: Int) 
     
 }
 

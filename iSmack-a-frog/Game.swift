@@ -13,6 +13,7 @@ protocol GameDelegate: class {
     func updateCelltAt(_ row: Int, _ column: Int)
     func updateLivesLeft(_ lives: Int)
     func updateAllCells()
+    func animateItemAt(_ row: Int, _ column: Int, for frogHoleState: FrogHoleState)
 }
 
 class Game: NSObject {
@@ -77,13 +78,19 @@ class Game: NSObject {
         switch state {
         case .HittableAngryForg:
             addpoints()
+            animateItemAt(row, column, for: state)
             resetCellAndTimerAt(row, column)
         case .HittableContagiousFrog:
             takeLife()
+            animateItemAt(row, column, for: state)
             resetCellAndTimerAt(row, column)
         case .NonHittableNoFrog:
             break
         }
+    }
+    
+    private func animateItemAt(_ row: Int, _ column: Int, for frogHoleState: FrogHoleState) {
+        delegate?.animateItemAt(row, column, for: frogHoleState)
     }
     
     private func resetCellAndTimerAt(_ row: Int, _ column: Int) {
