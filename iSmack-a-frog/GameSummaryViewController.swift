@@ -21,12 +21,18 @@ class GameSummaryViewController: UIViewController {
     
     let dataAccessObject = DataManager()
     
+    var winners: [PersistablePlayer] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pointLabel.text = String(points) + " points"
-        let player = Player(score: points, name: "hara", latitude: 0.0, longitude: 0.0)
         if dataAccessObject.isAmongWinners(with: points) {
-            
+            let player = Player(score: points, name: "pipi2", latitude: 0.0, longitude: 0.0)
+            dataAccessObject.save(winner: player)
+        }
+        winners = dataAccessObject.winners
+        for i in 0..<winners.count {
+            print(winners[i])
         }
         
     }

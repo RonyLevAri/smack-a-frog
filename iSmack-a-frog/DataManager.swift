@@ -15,14 +15,16 @@ class DataManager {
     lazy var winners: [PersistablePlayer] = {
         self.loadWinners()
     }()
+    // TODO: make filePath optional to allow gracefull fallback in case of error
     lazy var filePath: String = {
         do {
-            let documentDirURL = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let documentDirURL = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileURL = documentDirURL.appendingPathComponent(self.file).appendingPathExtension("txt")
             print("path file: \(fileURL.path)")
             return fileURL.path
         } catch {
             print("error did not find file!")
+            return ""
         }
     }()
     
@@ -68,6 +70,5 @@ class DataManager {
     
     private func writeToFile() {
         NSKeyedArchiver.archiveRootObject(winners, toFile: filePath)
-        
     }
 }

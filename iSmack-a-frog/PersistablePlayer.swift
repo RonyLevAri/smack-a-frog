@@ -42,6 +42,10 @@ class PersistablePlayer: NSObject, NSCoding {
         aCoder.encode(latitude, forKey: PersistablePlayerPropertiesKeys.Latitude.rawValue)
         aCoder.encode(longitude, forKey: PersistablePlayerPropertiesKeys.Longitude.rawValue)
     }
+    
+    override var description: String {
+        return "\(score), \(name), \(latitude), \(longitude)"
+    }
 }
 
 enum PersistablePlayerPropertiesKeys: String {
