@@ -25,6 +25,9 @@
 		5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171E0E81F1D46D800E9ED65 /* FrogHole.swift */; };
 		5173787A1F21463D00B963B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517378791F21463D00B963B0 /* Assets.xcassets */; };
 		517378921F2BF15000B963B0 /* BoardTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517378911F2BF15000B963B0 /* BoardTimeController.swift */; };
+		517396801F6F11C00094B648 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173967F1F6F11C00094B648 /* Player.swift */; };
+		517396821F6F17AE0094B648 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517396811F6F17AE0094B648 /* DataManager.swift */; };
+		517396841F6F38EB0094B648 /* PersistablePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517396831F6F38EB0094B648 /* PersistablePlayer.swift */; };
 		517E84F01F489F480036D7A8 /* GameSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */; };
 		517E85111F48B05E0036D7A8 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85071F48B05E0036D7A8 /* hole.png */; };
 		517E85121F48B05E0036D7A8 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85081F48B05E0036D7A8 /* star_2.png */; };
@@ -81,6 +84,9 @@
 		5171E0E81F1D46D800E9ED65 /* FrogHole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrogHole.swift; sourceTree = "<group>"; };
 		517378791F21463D00B963B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517378911F2BF15000B963B0 /* BoardTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTimeController.swift; sourceTree = "<group>"; };
+		5173967F1F6F11C00094B648 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		517396811F6F17AE0094B648 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		517396831F6F38EB0094B648 /* PersistablePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistablePlayer.swift; sourceTree = "<group>"; };
 		517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSummaryViewController.swift; sourceTree = "<group>"; };
 		517E85071F48B05E0036D7A8 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		517E85081F48B05E0036D7A8 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
@@ -161,12 +167,15 @@
 				5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */,
 				517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */,
 				5171E0D81F1AD66000E9ED65 /* Game.swift */,
-				5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */,
 				5171E0D91F1AD66000E9ED65 /* GameConfig.swift */,
-				5171E0E81F1D46D800E9ED65 /* FrogHole.swift */,
 				5171E0E41F1D30E900E9ED65 /* GameBoard.swift */,
+				5171E0E81F1D46D800E9ED65 /* FrogHole.swift */,
 				517378911F2BF15000B963B0 /* BoardTimeController.swift */,
 				512002DE1F42756A005FABC1 /* FlipFlopTimer.swift */,
+				5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */,
+				5173967F1F6F11C00094B648 /* Player.swift */,
+				517396831F6F38EB0094B648 /* PersistablePlayer.swift */,
+				517396811F6F17AE0094B648 /* DataManager.swift */,
 				512002DC1F2CAA0B005FABC1 /* Utils.swift */,
 				5171E0821F11618F00E9ED65 /* Main.storyboard */,
 				517378791F21463D00B963B0 /* Assets.xcassets */,
@@ -341,9 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5171E0D31F16AD9100E9ED65 /* GameViewController.swift in Sources */,
+				517396821F6F17AE0094B648 /* DataManager.swift in Sources */,
 				5171E0D71F1A6DC600E9ED65 /* GameCellView.swift in Sources */,
 				5171E0DA1F1AD66000E9ED65 /* Game.swift in Sources */,
 				5171E0E51F1D30E900E9ED65 /* GameBoard.swift in Sources */,
+				517396801F6F11C00094B648 /* Player.swift in Sources */,
 				5171E0E71F1D32F700E9ED65 /* GameDifficulty.swift in Sources */,
 				517378921F2BF15000B963B0 /* BoardTimeController.swift in Sources */,
 				5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */,
@@ -351,6 +362,7 @@
 				5171E0DB1F1AD66000E9ED65 /* GameConfig.swift in Sources */,
 				517E84F01F489F480036D7A8 /* GameSummaryViewController.swift in Sources */,
 				5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */,
+				517396841F6F38EB0094B648 /* PersistablePlayer.swift in Sources */,
 				5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */,
 				512002DF1F42756A005FABC1 /* FlipFlopTimer.swift in Sources */,
 			);

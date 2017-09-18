@@ -19,8 +19,15 @@ class GameSummaryViewController: UIViewController {
     
     var points: Int!
     
+    let dataAccessObject = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pointLabel.text = String(points) + " points"
+        let player = Player(score: points, name: "hara", latitude: 0.0, longitude: 0.0)
+        if dataAccessObject.isAmongWinners(with: points) {
+            
+        }
+        
     }
 }

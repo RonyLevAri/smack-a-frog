@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+struct Player {
+    
+    let score: Int
+    let name: String
+    let latitude: Double
+    let longitude: Double
+    
+    init(score: Int, name: String, latitude: Double, longitude: Double) {
+        self.score = score
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+    var description: String {
+        return "\(score), \(name), \(latitude), \(longitude)"
+    }
+}
