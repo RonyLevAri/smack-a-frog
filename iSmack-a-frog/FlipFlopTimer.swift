@@ -49,7 +49,7 @@ class FlipFlopTimer: NSObject {
         offTimer?.invalidate()
         onTimer?.invalidate()
 
-        _state = .Stopped
+        //_state = .Stopped
     }
     
     func reset() {
@@ -57,11 +57,11 @@ class FlipFlopTimer: NSObject {
         start()
     }
     
-    func runing() {
-        guard _state != .Stopped else { return }
+    func running() {
+        //guard _state != .Stopped else { return }
 
         print("turining on timer \(row), \(column)")
-        _state = BinaryState.Idle
+        _state = BinaryState.Running
         timerDelegate?.timerRunningAt(row, column)
         randomInterval = Utils.random(runningIntervalRange)
         // print("timer \(row), \(column) will now run for \(randomInterval)")
@@ -70,19 +70,19 @@ class FlipFlopTimer: NSObject {
     }
     
     func idle() {
-        guard _state != .Stopped else { return }
+        //guard _state != .Stopped else { return }
 
         print("turining off \(row), \(column)")
-        _state = BinaryState.Running
+        _state = BinaryState.Idle
         timerDelegate?.timerIdleAt(row, column)
         randomInterval = Utils.random(idleIntervalRange)
         // print("timer \(row), \(column) will now be idle for \(randomInterval)")
-        offTimer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(FlipFlopTimer.runing), userInfo: nil, repeats: false)
+        offTimer = Timer.scheduledTimer(timeInterval: randomInterval, target: self, selector: #selector(FlipFlopTimer.running), userInfo: nil, repeats: false)
     }
     
     enum BinaryState:String {
         case Idle
         case Running
-        case Stopped
+        //case Stopped
     }
 }
