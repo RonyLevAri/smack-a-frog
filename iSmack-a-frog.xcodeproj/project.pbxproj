@@ -28,6 +28,7 @@
 		517396801F6F11C00094B648 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173967F1F6F11C00094B648 /* Player.swift */; };
 		517396821F6F17AE0094B648 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517396811F6F17AE0094B648 /* DataManager.swift */; };
 		517396841F6F38EB0094B648 /* PersistablePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517396831F6F38EB0094B648 /* PersistablePlayer.swift */; };
+		517396861F705AB90094B648 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 517396851F705AB90094B648 /* earth.png */; };
 		517E84F01F489F480036D7A8 /* GameSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */; };
 		517E85111F48B05E0036D7A8 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85071F48B05E0036D7A8 /* hole.png */; };
 		517E85121F48B05E0036D7A8 /* star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85081F48B05E0036D7A8 /* star_2.png */; };
@@ -87,6 +88,7 @@
 		5173967F1F6F11C00094B648 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		517396811F6F17AE0094B648 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		517396831F6F38EB0094B648 /* PersistablePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistablePlayer.swift; sourceTree = "<group>"; };
+		517396851F705AB90094B648 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
 		517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSummaryViewController.swift; sourceTree = "<group>"; };
 		517E85071F48B05E0036D7A8 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		517E85081F48B05E0036D7A8 /* star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2.png; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				517E850A1F48B05E0036D7A8 /* toon_frog_nobackground_croped.png */,
 				517E850B1F48B05E0036D7A8 /* toon_frog_nobackground2.png */,
 				517E850C1F48B05E0036D7A8 /* toon_mean_frog.png */,
+				517396851F705AB90094B648 /* earth.png */,
 				517E850D1F48B05E0036D7A8 /* toon_shocked_frog.png */,
 				517E850E1F48B05E0036D7A8 /* toon_sick_frog.png */,
 				517E850F1F48B05E0036D7A8 /* x-death.png */,
@@ -310,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517396861F705AB90094B648 /* earth.png in Resources */,
 				517E85121F48B05E0036D7A8 /* star_2.png in Resources */,
 				517E85131F48B05E0036D7A8 /* Star.png in Resources */,
 				5171E0AD1F116AC100E9ED65 /* .gitignore in Resources */,
