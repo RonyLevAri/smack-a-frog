@@ -373,23 +373,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu">
-                                <rect key="frame" x="59" y="159" width="202.5" height="163"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu" userLabel="middleStack">
+                                <rect key="frame" x="59" y="159" width="203" height="165.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
-                                        <rect key="frame" x="38.5" y="0.0" width="125" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
+                                        <rect key="frame" x="39" y="0.0" width="125" height="101.5"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
-                                        <rect key="frame" x="0.0" y="100" width="202.5" height="31.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
+                                        <rect key="frame" x="0.0" y="101.5" width="203" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="kIS-ZA-945"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
-                                        <rect key="frame" x="40.5" y="131.5" width="121" height="31.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
+                                        <rect key="frame" x="41" y="133.5" width="121" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="yhk-PM-o38"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -403,8 +410,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld">
-                                <rect key="frame" x="46" y="105" width="228" height="31.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld" userLabel="nameStack">
+                                <rect key="frame" x="36" y="89" width="248" height="31.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-Hj-7Lc">
                                         <rect key="frame" x="0.0" y="0.0" width="73" height="31.5"/>
@@ -413,7 +420,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-P7-jGy">
-                                        <rect key="frame" x="86" y="0.0" width="142" height="31.5"/>
+                                        <rect key="frame" x="86" y="0.0" width="162" height="31.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -428,11 +435,9 @@
                         <constraints>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" id="Fa2-0b-VWy"/>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="top" secondItem="uu7-L4-GrC" secondAttribute="bottom" id="PZc-4L-Gfg"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" constant="30" id="Wam-F3-JxG"/>
-                            <constraint firstItem="sl4-yT-nhu" firstAttribute="top" secondItem="ZvR-RP-2ld" secondAttribute="bottom" constant="22" id="Zzi-AX-hkl"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="top" secondItem="PTZ-cq-wrg" secondAttribute="bottom" constant="46" id="cJa-PY-f3I"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="centerX" secondItem="znH-RC-BXz" secondAttribute="centerX" id="jxI-2Q-zZd"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="centerX" secondItem="sl4-yT-nhu" secondAttribute="centerX" id="p3A-dk-AFC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZvR-RP-2ld" secondAttribute="trailing" constant="20" id="hl4-TB-Rcs"/>
+                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" constant="20" id="kgY-H3-fmm"/>
+                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="top" secondItem="PTZ-cq-wrg" secondAttribute="bottom" constant="30" id="y1t-4r-7nB"/>
                         </constraints>
                     </view>
                 </viewController>
