@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MarkerFeltThin.ttf">
+            <string>MarkerFelt-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Intro View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -139,7 +144,6 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="Kdv-rg-fiX" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HzB-cq-4Yt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -293,17 +297,17 @@
                                 <rect key="frame" x="20" y="59" width="280" height="382"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highest Scores" textAlignment="center" lineBreakMode="characterWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thv-FY-CMf">
-                                        <rect key="frame" x="50.5" y="0.0" width="179" height="33.5"/>
+                                        <rect key="frame" x="50.5" y="0.0" width="179" height="33"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gLa-iK-aPc">
-                                        <rect key="frame" x="0.0" y="33.5" width="280" height="297"/>
+                                        <rect key="frame" x="0.0" y="33" width="280" height="298"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Et7-aG-R8T">
-                                        <rect key="frame" x="14.5" y="330.5" width="251" height="51.5"/>
+                                        <rect key="frame" x="14.5" y="331" width="251" height="51"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth.png" translatesAutoresizingMaskIntoConstraints="NO" id="pko-xC-Cc6">
                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="51"/>
@@ -373,36 +377,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu" userLabel="middleStack">
-                                <rect key="frame" x="59" y="159" width="203" height="165.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
-                                        <rect key="frame" x="39" y="0.0" width="125" height="101.5"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
-                                        <rect key="frame" x="0.0" y="101.5" width="203" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="kIS-ZA-945"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
-                                        <rect key="frame" x="41" y="133.5" width="121" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="yhk-PM-o38"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-cq-wrg" userLabel="Close">
                                 <rect key="frame" x="16" y="20" width="49" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
@@ -410,34 +384,73 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld" userLabel="nameStack">
-                                <rect key="frame" x="36" y="89" width="248" height="31.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-9p-7zY">
+                                <rect key="frame" x="36" y="133" width="248" height="214.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-Hj-7Lc">
-                                        <rect key="frame" x="0.0" y="0.0" width="73" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-P7-jGy">
-                                        <rect key="frame" x="86" y="0.0" width="162" height="31.5"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld" userLabel="nameStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-Hj-7Lc">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="49"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-P7-jGy">
+                                                <rect key="frame" x="86" y="0.0" width="162" height="49"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VJp-P7-jGy" firstAttribute="leading" secondItem="g3G-Hj-7Lc" secondAttribute="trailing" constant="13" id="YPJ-Gf-mmn"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu" userLabel="middleStack">
+                                        <rect key="frame" x="23" y="49" width="202.5" height="165.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
+                                                <rect key="frame" x="38.5" y="0.0" width="125" height="101.5"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
+                                                <rect key="frame" x="0.0" y="101.5" width="202.5" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="rZn-OL-zfl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
+                                                <rect key="frame" x="40.5" y="133.5" width="121" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="yhk-PM-o38"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="VJp-P7-jGy" firstAttribute="leading" secondItem="g3G-Hj-7Lc" secondAttribute="trailing" constant="13" id="YPJ-Gf-mmn"/>
+                                    <constraint firstItem="ZvR-RP-2ld" firstAttribute="leading" secondItem="fmY-9p-7zY" secondAttribute="leading" id="EPV-9C-aNz" userLabel="nameStack.bottom = middlestack.top + 8"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZvR-RP-2ld" secondAttribute="trailing" id="aLz-Qr-Bai"/>
+                                    <constraint firstItem="sl4-yT-nhu" firstAttribute="top" secondItem="ZvR-RP-2ld" secondAttribute="bottom" constant="8" id="vJY-ZG-sPF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" id="Fa2-0b-VWy"/>
+                            <constraint firstItem="fmY-9p-7zY" firstAttribute="centerX" secondItem="znH-RC-BXz" secondAttribute="centerX" id="HDy-Vg-LrM"/>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="top" secondItem="uu7-L4-GrC" secondAttribute="bottom" id="PZc-4L-Gfg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZvR-RP-2ld" secondAttribute="trailing" constant="20" id="hl4-TB-Rcs"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" constant="20" id="kgY-H3-fmm"/>
-                            <constraint firstItem="ZvR-RP-2ld" firstAttribute="top" secondItem="PTZ-cq-wrg" secondAttribute="bottom" constant="30" id="y1t-4r-7nB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fmY-9p-7zY" secondAttribute="trailing" constant="20" id="gc4-of-hab"/>
+                            <constraint firstItem="fmY-9p-7zY" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" constant="20" id="smE-hM-FhY"/>
                         </constraints>
                     </view>
                 </viewController>
