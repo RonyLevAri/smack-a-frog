@@ -24,6 +24,8 @@ class GameSummaryViewController: UIViewController {
     
     var dataAccessObject: DataManager!
     
+    var winner: Player?
+    
     var winners: [PersistablePlayer] = []
     
     deinit {
@@ -61,6 +63,7 @@ class GameSummaryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? MapViewController {
             controller.dataAccessObject = dataAccessObject
+            controller.winner = winner
         }
     }
 

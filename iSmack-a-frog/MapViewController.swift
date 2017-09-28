@@ -19,6 +19,8 @@ class MapViewController: UIViewController {
     
     var dataAccessObject: DataManager!
     
+    var winner: Player?
+    
     let regionRadius: CLLocationDistance = 1000
     
     deinit {
@@ -33,7 +35,9 @@ class MapViewController: UIViewController {
             return Winner(title: p.name, locationName: p.score, discipline: "winner", coordinate: CLLocationCoordinate2D(latitude: Double(p.latitude)!, longitude: Double(p.longitude)!))
         })
         map.addAnnotations(annotatedWinners)
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        
+        // let initialLocation = CLLocation(latitude: winner?.latitude ?? 21.282778, longitude: winner?.longitude ?? -157.829444)
+        let initialLocation = CLLocation(latitude: winner?.latitude ?? annotatedWinners[0].coordinate.latitude, longitude: winner?.longitude ?? annotatedWinners[0].coordinate.longitude)
         centerMapOnLocation(location: initialLocation)
     }
     

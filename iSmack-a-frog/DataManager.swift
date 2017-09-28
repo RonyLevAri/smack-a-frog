@@ -11,7 +11,7 @@ import Foundation
 class DataManager {
     
     let maxWinners = 10
-    let file = "test1"
+    let file = "test"
     lazy var winners: [PersistablePlayer] = {
         self.loadWinners()
     }()
@@ -20,7 +20,6 @@ class DataManager {
         do {
             let documentDirURL = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileURL = documentDirURL.appendingPathComponent(self.file).appendingPathExtension("txt")
-            //print("path file: \(fileURL.path)")
             return fileURL.path
         } catch {
             print("error did not find file!")
@@ -61,6 +60,7 @@ class DataManager {
         }
         winners.append(makePersistant(the: winner))
         winners.sort { $0.score > $1.score }
+        print("fucking shit dieeeee \(winners)")
         writeToFile()
     }
     

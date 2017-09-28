@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class WinnerDetailController: UIViewController {
+class WinnerDetailController: UIViewController, CLLocationManagerDelegate {
     
     var points: Int!
     
@@ -18,31 +20,42 @@ class WinnerDetailController: UIViewController {
     
     @IBOutlet weak var lblPoints: UILabel!
     
-    @IBAction func closeDetailScreen(_ sender: UIButton) {
-        // print("closing details window")
-        var playername = ""
-        if tfWinnerName.text == nil {
-            playername = "Annonymous"
-        } else {
-            playername = tfWinnerName.text!
-        }
-        let player = Player(score: points, name: playername, latitude: 0.0, longitude: 0.0)
-        dataAccessObject.save(winner: player)
-        performSegue(withIdentifier: "toWinnerFronDetails", sender: self)
-    }
+    let locationManager = CLLocationManager()
+    
+    var winnerLocation: CLLocationCoordinate2D?
+    
+    var winner: Player?
     
     deinit {
         print("I am destroyed \(self)")
     }
     
+    override func viewDidLoad() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        lblPoints.text = String(points) + " points!"
+    }
+    
+    @IBAction func closeDetailScreen(_ sender: UIButton) {
+        let playername = tfWinnerName.text! == "" ? "Annonymous" : tfWinnerName.text!
+        winner = Player(score: points, name: playername, latitude: winnerLocation?.latitude ?? 0.0, longitude: winnerLocation?.longitude ?? 0.0)
+        dataAccessObject.save(winner: winner!)
+        performSegue(withIdentifier: "toWinnerFronDetails", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? GameSummaryViewController {
             controller.dataAccessObject = dataAccessObject
+            controller.winner = winner
         }
     }
     
-    override func viewDidLoad() {
-        lblPoints.text = String(points) + " points!"
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("im in the location function")
+        winnerLocation = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
     }
-
 }
+
