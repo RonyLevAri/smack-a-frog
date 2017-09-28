@@ -59,8 +59,9 @@ class DataManager {
             deleteLastWinner()
         }
         winners.append(makePersistant(the: winner))
-        winners.sort { $0.score > $1.score }
-        print("fucking shit dieeeee \(winners)")
+        winners.sort(by: { (p1, p2) -> Bool in
+            return Int(p1.score)! > Int(p2.score)!
+        })
         writeToFile()
     }
     
