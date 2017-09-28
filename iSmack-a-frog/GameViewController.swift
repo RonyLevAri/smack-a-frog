@@ -24,7 +24,9 @@ class GameViewController: UIViewController {
     
     var gameConfig: GameConfig!
     
-    let dataAccessObject = DataManager()
+    lazy var dataAccessObject = {
+        return DataManager()
+    }()
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 10.0, bottom: 5.0, right: 10.0)
     
@@ -32,8 +34,14 @@ class GameViewController: UIViewController {
     
     fileprivate var cellsPerColumn: CGFloat!
     
+    deinit {
+        print("I am destroyed \(self)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // dataAccessObject.deleteFileContent()
         
         gameBoardCollectionView.dataSource = self
         gameBoardCollectionView.delegate = self
@@ -42,7 +50,6 @@ class GameViewController: UIViewController {
         
         cellsPerRow = CGFloat(gameConfig.boardSize.columns)
         cellsPerColumn = CGFloat(gameConfig.boardSize.rows)
-        
         
         let timerController = BoardTimerController(
             size: gameConfig.boardSize,
@@ -80,6 +87,12 @@ class GameViewController: UIViewController {
         if segue.identifier == "toWinnerDetails" {
             if let controller = segue.destination as? WinnerDetailController {
                 controller.points = points
+                controller.dataAccessObject = dataAccessObject
+            }
+        }
+        if segue.identifier == "toGameSummary" {
+            if let controller = segue.destination as? GameSummaryViewController {
+                controller.dataAccessObject = dataAccessObject
             }
         }
     }

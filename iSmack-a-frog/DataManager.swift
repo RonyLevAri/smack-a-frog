@@ -11,7 +11,7 @@ import Foundation
 class DataManager {
     
     let maxWinners = 10
-    let file = "test"
+    let file = "test1"
     lazy var winners: [PersistablePlayer] = {
         self.loadWinners()
     }()
@@ -60,7 +60,7 @@ class DataManager {
             deleteLastWinner()
         }
         winners.append(makePersistant(the: winner))
-        winners.sort { $0.score < $1.score }
+        winners.sort { $0.score > $1.score }
         writeToFile()
     }
     

@@ -22,9 +22,13 @@ class GameSummaryViewController: UIViewController {
     
     @IBOutlet weak var mapTxet: UILabel!
     
-    var dataAccessObject = DataManager()
+    var dataAccessObject: DataManager!
     
     var winners: [PersistablePlayer] = []
+    
+    deinit {
+        print("I am destroyed \(self)")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +51,6 @@ class GameSummaryViewController: UIViewController {
         for i in 0..<winners.count {
             print(winners[i])
         }
-        
     }
     
     func loadWinnerMap(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -65,7 +68,7 @@ extension GameSummaryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // print("number of rows in section \(tableView.description)")
-        return dataAccessObject.maxWinners
+        return winners.count
     }
 }
 

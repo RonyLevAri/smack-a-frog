@@ -12,7 +12,7 @@ class WinnerDetailController: UIViewController {
     
     var points: Int!
     
-    let dataAccessObject = DataManager()
+    var dataAccessObject: DataManager!
     
     @IBOutlet weak var tfWinnerName: UITextField!
     
@@ -29,6 +29,17 @@ class WinnerDetailController: UIViewController {
         let player = Player(score: points, name: playername, latitude: 0.0, longitude: 0.0)
         dataAccessObject.save(winner: player)
         performSegue(withIdentifier: "toWinnerFronDetails", sender: self)
+    }
+    
+    deinit {
+        print("I am destroyed \(self)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? GameSummaryViewController {
+            controller.dataAccessObject = dataAccessObject
+        }
+        
     }
     
     override func viewDidLoad() {
