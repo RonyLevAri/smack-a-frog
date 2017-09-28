@@ -55,6 +55,13 @@ class GameSummaryViewController: UIViewController {
     
     func loadWinnerMap(tapGestureRecognizer: UITapGestureRecognizer) {
         print("opening map")
+        performSegue(withIdentifier: "toMap", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? MapViewController {
+            controller.dataAccessObject = dataAccessObject
+        }
     }
 
 }

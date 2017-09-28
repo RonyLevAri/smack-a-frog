@@ -41,6 +41,8 @@
 		517E85191F48B05E0036D7A8 /* x-death.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850F1F48B05E0036D7A8 /* x-death.png */; };
 		517E851A1F48B05E0036D7A8 /* x-life.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85101F48B05E0036D7A8 /* x-life.png */; };
 		517E851C1F48B0FC0036D7A8 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E851B1F48B0FC0036D7A8 /* blue_star.png */; };
+		51B84DE11F7D7080009AFC70 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B84DE01F7D7080009AFC70 /* MapViewController.swift */; };
+		51B84DE31F7D7801009AFC70 /* Winner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B84DE21F7D7801009AFC70 /* Winner.swift */; };
 		51D058361F7AF26C00BA2EEF /* WinnerDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		517E850F1F48B05E0036D7A8 /* x-death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-death.png"; sourceTree = "<group>"; };
 		517E85101F48B05E0036D7A8 /* x-life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-life.png"; sourceTree = "<group>"; };
 		517E851B1F48B0FC0036D7A8 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
+		51B84DE01F7D7080009AFC70 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		51B84DE21F7D7801009AFC70 /* Winner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winner.swift; sourceTree = "<group>"; };
 		51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerDetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,7 @@
 				5171E0D21F16AD9100E9ED65 /* GameViewController.swift */,
 				517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */,
 				51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */,
+				51B84DE01F7D7080009AFC70 /* MapViewController.swift */,
 				5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */,
 				5171E0D81F1AD66000E9ED65 /* Game.swift */,
 				5171E0D91F1AD66000E9ED65 /* GameConfig.swift */,
@@ -181,6 +186,7 @@
 				5171E0E61F1D32F700E9ED65 /* GameDifficulty.swift */,
 				5173967F1F6F11C00094B648 /* Player.swift */,
 				517396831F6F38EB0094B648 /* PersistablePlayer.swift */,
+				51B84DE21F7D7801009AFC70 /* Winner.swift */,
 				517396811F6F17AE0094B648 /* DataManager.swift */,
 				512002DC1F2CAA0B005FABC1 /* Utils.swift */,
 				5171E0821F11618F00E9ED65 /* Main.storyboard */,
@@ -368,7 +374,9 @@
 				5171E0E91F1D46D800E9ED65 /* FrogHole.swift in Sources */,
 				512002DD1F2CAA0B005FABC1 /* Utils.swift in Sources */,
 				5171E0DB1F1AD66000E9ED65 /* GameConfig.swift in Sources */,
+				51B84DE31F7D7801009AFC70 /* Winner.swift in Sources */,
 				517E84F01F489F480036D7A8 /* GameSummaryViewController.swift in Sources */,
+				51B84DE11F7D7080009AFC70 /* MapViewController.swift in Sources */,
 				5171E0811F11618F00E9ED65 /* IntroViewController.swift in Sources */,
 				517396841F6F38EB0094B648 /* PersistablePlayer.swift in Sources */,
 				5171E07F1F11618F00E9ED65 /* AppDelegate.swift in Sources */,

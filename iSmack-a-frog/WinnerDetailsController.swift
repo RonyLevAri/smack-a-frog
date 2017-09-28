@@ -39,7 +39,6 @@ class WinnerDetailController: UIViewController {
         if let controller = segue.destination as? GameSummaryViewController {
             controller.dataAccessObject = dataAccessObject
         }
-        
     }
     
     override func viewDidLoad() {

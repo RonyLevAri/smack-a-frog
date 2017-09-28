@@ -348,11 +348,58 @@
                         <outlet property="earthImage" destination="pko-xC-Cc6" id="tnN-me-9Qn"/>
                         <outlet property="mapTxet" destination="8hp-1B-wau" id="q2F-HP-TKz"/>
                         <outlet property="tableView" destination="gLa-iK-aPc" id="Cwh-nI-QQ2"/>
+                        <segue destination="tXs-Sy-NyD" kind="show" identifier="toMap" id="3Kp-BJ-Km7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OP0-QF-jTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047.5" y="-565"/>
+            <point key="canvasLocation" x="2072" y="-565"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="kkT-op-fWn">
+            <objects>
+                <viewController id="tXs-Sy-NyD" customClass="MapViewController" customModule="iSmack_a_frog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Bc-0T-StC"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddT-7p-IsP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hyJ-Ui-k3u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TjH-8G-XxC">
+                                <rect key="frame" x="0.0" y="56" width="320" height="424"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-QX-Goi">
+                                <rect key="frame" x="16" y="20" width="49" height="39"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="tXs-Sy-NyD" eventType="touchUpInside" id="P7O-vJ-2f9"/>
+                                    <action selector="startNewGame:" destination="4eH-Bs-Z5s" eventType="touchUpInside" id="l2h-nF-5FY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mry-QX-Goi" firstAttribute="leading" secondItem="hyJ-Ui-k3u" secondAttribute="leading" constant="16" id="0rf-6x-6vi"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mry-QX-Goi" secondAttribute="trailing" constant="20" symbolic="YES" id="4m6-LM-UTW"/>
+                            <constraint firstItem="Mry-QX-Goi" firstAttribute="top" secondItem="7Bc-0T-StC" secondAttribute="bottom" id="VKS-qD-g9E"/>
+                            <constraint firstAttribute="trailing" secondItem="TjH-8G-XxC" secondAttribute="trailing" id="WHd-er-bGJ"/>
+                            <constraint firstItem="TjH-8G-XxC" firstAttribute="bottom" secondItem="ddT-7p-IsP" secondAttribute="top" id="aFG-L5-EqC"/>
+                            <constraint firstItem="TjH-8G-XxC" firstAttribute="leading" secondItem="hyJ-Ui-k3u" secondAttribute="leading" id="shf-iX-yI4"/>
+                            <constraint firstItem="TjH-8G-XxC" firstAttribute="top" secondItem="Mry-QX-Goi" secondAttribute="bottom" constant="-3" id="xQK-vD-zWY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="TjH-8G-XxC" id="mGm-Dm-TEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J67-Kq-6V5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3076.875" y="-565"/>
         </scene>
         <!--Winner Detail Controller-->
         <scene sceneID="MSj-IP-GNf">
