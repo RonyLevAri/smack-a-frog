@@ -41,7 +41,7 @@ class Game: NSObject {
     }
     
     func startGame() {
-        print("game is counting till 3 before starting the game")
+        // print("game is counting till 3 before starting the game")
         _gameTimer = Timer.scheduledTimer(
             timeInterval: _gameConfig.delayBeforeStartingTheGame,
             target: self,
@@ -51,7 +51,7 @@ class Game: NSObject {
     }
     
     func startGameCountdowon() {
-        print("game is starting the game")
+        // print("game is starting the game")
         _boardTimersController.start()
         _gameTimer = Timer.scheduledTimer(
             timeInterval: _gameConfig.gameIntervalInSeconds,
@@ -62,7 +62,7 @@ class Game: NSObject {
     }
     
     func stopGame() {
-        print("game is stopping game")
+        // print("game is stopping game")
         _gameTimer?.invalidate()
         _boardTimersController.stop()
         _board.resetAllCells()
@@ -71,7 +71,7 @@ class Game: NSObject {
     
     func cellTappedAt(row: Int, column: Int) {
         
-        print("game recieved tapping action on cell \(row) \(column)")
+        // print("game recieved tapping action on cell \(row) \(column)")
         
         let state = _board.getCellStateAt(row, column)
             
@@ -102,7 +102,7 @@ class Game: NSObject {
     
     
     private func addpoints() {
-        print("game adding points for tapping")
+        // print("game adding points for tapping")
         _playerState.points += 1
         delegate?.updatePoints(_playerState.points)
         if _playerState.points >= 30 {
@@ -111,11 +111,11 @@ class Game: NSObject {
     }
     
     fileprivate func takeLife() {
-        print("game taking life for tapping")
+        // print("game taking life for tapping")
         _playerState.lives -= 1
         delegate?.updateLivesLeft(_playerState.lives)
         if _playerState.lives == 0 {
-            print("game stopping game because life ended")
+            // print("game stopping game because life ended")
             stopGame()
         }
     }

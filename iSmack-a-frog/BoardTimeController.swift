@@ -28,7 +28,7 @@ class BoardTimerController: NSObject {
             
             for column in 0..<self.size.columns {
                 var timer = FlipFlopTimer(row: row, column: column, withIdleIntervalRange: idle, withRunningIntervalRange: running)
-                print("Creating timers: \(timer)")
+                // print("Creating timers: \(timer)")
                 timer.timerDelegate = self
                 timerRow.append(timer)
             }
@@ -72,9 +72,9 @@ class BoardTimerController: NSObject {
         
         for row in 0..<size.rows {
             for column in 0..<size.columns {
-                print("timer controller is invalidating timer at \(row), \(column)")
+                // print("timer controller is invalidating timer at \(row), \(column)")
                 _flipFlopTimers[row][column].stop()
-                print("Stopping timers: \(_flipFlopTimers[row][column])")
+                // print("Stopping timers: \(_flipFlopTimers[row][column])")
             }
         }
     }

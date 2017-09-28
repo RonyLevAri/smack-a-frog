@@ -60,7 +60,7 @@ class GameViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            print("device shaken")
+            // print("device shaken")
             //game.deviceShakened()
         }
     }
@@ -113,7 +113,7 @@ extension GameViewController: UICollectionViewDelegate {
     }
     
     private func frogHoleStateToImage(state: FrogHoleState) -> UIImage? {
-        print("the frog hole state is: \(state)")
+        // print("the frog hole state is: \(state)")
         switch state {
         case .HittableAngryForg:
             return UIImage(named: "toon_mean_frog")!
@@ -125,7 +125,7 @@ extension GameViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell tappedt at \(indexPath.section) \(indexPath.item)")
+        // print("cell tappedt at \(indexPath.section) \(indexPath.item)")
         game.cellTappedAt(row: indexPath.section, column: indexPath.item)
         
     }
@@ -165,7 +165,7 @@ extension GameViewController: GameDelegate {
     }
     
     func updateCelltAt(_ row: Int, _ column: Int) {
-        print("view controller updating cell at \(row) \(column)")
+        // print("view controller updating cell at \(row) \(column)")
         gameBoardCollectionView.reloadItems(at: [IndexPath(item: column, section: row)])
     }
     
@@ -236,7 +236,7 @@ extension GameViewController: GameDelegate {
     }
     
     func updateAllCells() {
-        print("reloading all cells")
+        // print("reloading all cells")
         for row in 0..<game.board.size.rows {
             for column in 0..<game.board.size.columns {
                 updateCelltAt(row, column)

@@ -31,7 +31,7 @@ struct GameBoard {
         
         for row in 0..<_cells.count {
             for column in 0..<_cells[row].count {
-                print("board is reseting cell \(row), \(column)")
+                // print("board is reseting cell \(row), \(column)")
                 resetCellAt(row, column)
             }
         }

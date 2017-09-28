@@ -15,7 +15,7 @@ class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("I am in the view did load of the main game menu \(self)")
+        // print("I am in the view did load of the main game menu \(self)")
     }
     
     deinit {

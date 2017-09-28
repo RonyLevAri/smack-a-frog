@@ -19,7 +19,7 @@ class WinnerDetailController: UIViewController {
     @IBOutlet weak var lblPoints: UILabel!
     
     @IBAction func closeDetailScreen(_ sender: UIButton) {
-        print("closing details window")
+        // print("closing details window")
         var playername = ""
         if tfWinnerName.text == nil {
             playername = "Annonymous"

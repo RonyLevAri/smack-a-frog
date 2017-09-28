@@ -21,7 +21,7 @@ class GameSummaryViewController: UIViewController {
     
     @IBOutlet weak var mapTxet: UILabel!
     
-    let dataAccessObject = DataManager()
+    var dataAccessObject = DataManager()
     
     var winners: [PersistablePlayer] = []
     
@@ -56,21 +56,25 @@ class GameSummaryViewController: UIViewController {
 
 extension GameSummaryViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        print("index path number \(indexPath)")
-        cell.textLabel?.text = winners[0].description
-        return cell
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // print("number of sections \(tableView.description)")
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // print("number of rows in section \(tableView.description)")
+        return dataAccessObject.maxWinners
     }
 }
 
 extension GameSummaryViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = winners[indexPath.item].description
+        // print("preparing cell number \(indexPath.item)")
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return winners.count
-    }
+    
 }

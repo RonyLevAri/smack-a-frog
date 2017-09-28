@@ -48,7 +48,6 @@ class FlipFlopTimer: NSObject {
     func stop() {
         offTimer?.invalidate()
         onTimer?.invalidate()
-
         //_state = .Stopped
     }
     
@@ -60,7 +59,7 @@ class FlipFlopTimer: NSObject {
     func running() {
         //guard _state != .Stopped else { return }
 
-        print("turining on timer \(row), \(column)")
+        // print("turining on timer \(row), \(column)")
         _state = BinaryState.Running
         timerDelegate?.timerRunningAt(row, column)
         randomInterval = Utils.random(runningIntervalRange)
@@ -72,7 +71,7 @@ class FlipFlopTimer: NSObject {
     func idle() {
         //guard _state != .Stopped else { return }
 
-        print("turining off \(row), \(column)")
+        // print("turining off \(row), \(column)")
         _state = BinaryState.Idle
         timerDelegate?.timerIdleAt(row, column)
         randomInterval = Utils.random(idleIntervalRange)
