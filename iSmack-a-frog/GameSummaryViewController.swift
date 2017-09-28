@@ -12,7 +12,8 @@ import UIKit
 class GameSummaryViewController: UIViewController {
     
     @IBAction func startNewGame(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+        // dismiss(animated: true, completion: nil)
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -52,6 +53,7 @@ class GameSummaryViewController: UIViewController {
     func loadWinnerMap(tapGestureRecognizer: UITapGestureRecognizer) {
         print("opening map")
     }
+
 }
 
 extension GameSummaryViewController: UITableViewDelegate {
@@ -74,6 +76,12 @@ extension GameSummaryViewController: UITableViewDataSource {
         cell.textLabel?.text = winners[indexPath.item].description
         // print("preparing cell number \(indexPath.item)")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var h : CGFloat = CGFloat()
+        h = self.tableView.frame.height / CGFloat(self.dataAccessObject.maxWinners)
+        return h
     }
     
     
