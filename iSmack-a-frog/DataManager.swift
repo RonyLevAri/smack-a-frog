@@ -20,7 +20,7 @@ class DataManager {
         do {
             let documentDirURL = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileURL = documentDirURL.appendingPathComponent(self.file).appendingPathExtension("txt")
-            print("path file: \(fileURL.path)")
+            //print("path file: \(fileURL.path)")
             return fileURL.path
         } catch {
             print("error did not find file!")
@@ -28,7 +28,7 @@ class DataManager {
         }
     }()
     
-    func makePersistant(the player: Player) -> PersistablePlayer {
+    private func makePersistant(the player: Player) -> PersistablePlayer {
         let persistablePlayer = PersistablePlayer(
             name: player.name,
             score: String(player.score),

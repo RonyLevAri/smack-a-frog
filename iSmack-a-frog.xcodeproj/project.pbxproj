@@ -41,6 +41,7 @@
 		517E85191F48B05E0036D7A8 /* x-death.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E850F1F48B05E0036D7A8 /* x-death.png */; };
 		517E851A1F48B05E0036D7A8 /* x-life.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E85101F48B05E0036D7A8 /* x-life.png */; };
 		517E851C1F48B0FC0036D7A8 /* blue_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 517E851B1F48B0FC0036D7A8 /* blue_star.png */; };
+		51D058361F7AF26C00BA2EEF /* WinnerDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		517E850F1F48B05E0036D7A8 /* x-death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-death.png"; sourceTree = "<group>"; };
 		517E85101F48B05E0036D7A8 /* x-life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-life.png"; sourceTree = "<group>"; };
 		517E851B1F48B0FC0036D7A8 /* blue_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_star.png; sourceTree = "<group>"; };
+		51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerDetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				5171E0D21F16AD9100E9ED65 /* GameViewController.swift */,
 				5171E0D61F1A6DC600E9ED65 /* GameCellView.swift */,
 				517E84EF1F489F480036D7A8 /* GameSummaryViewController.swift */,
+				51D058351F7AF26C00BA2EEF /* WinnerDetailsController.swift */,
 				5171E0D81F1AD66000E9ED65 /* Game.swift */,
 				5171E0D91F1AD66000E9ED65 /* GameConfig.swift */,
 				5171E0E41F1D30E900E9ED65 /* GameBoard.swift */,
@@ -269,7 +272,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = rony_temp;
 				TargetAttributes = {
 					5171E07A1F11618F00E9ED65 = {
@@ -357,6 +360,7 @@
 				517396821F6F17AE0094B648 /* DataManager.swift in Sources */,
 				5171E0D71F1A6DC600E9ED65 /* GameCellView.swift in Sources */,
 				5171E0DA1F1AD66000E9ED65 /* Game.swift in Sources */,
+				51D058361F7AF26C00BA2EEF /* WinnerDetailsController.swift in Sources */,
 				5171E0E51F1D30E900E9ED65 /* GameBoard.swift in Sources */,
 				517396801F6F11C00094B648 /* Player.swift in Sources */,
 				5171E0E71F1D32F700E9ED65 /* GameDifficulty.swift in Sources */,
@@ -433,7 +437,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -441,7 +447,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -484,7 +494,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -492,7 +504,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

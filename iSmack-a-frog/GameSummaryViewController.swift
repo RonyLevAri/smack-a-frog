@@ -21,10 +21,6 @@ class GameSummaryViewController: UIViewController {
     
     @IBOutlet weak var mapTxet: UILabel!
     
-    @IBOutlet weak var pointLabel: UILabel!
-    
-    var points: Int!
-    
     let dataAccessObject = DataManager()
     
     var winners: [PersistablePlayer] = []
@@ -45,13 +41,7 @@ class GameSummaryViewController: UIViewController {
         
         tableView.isScrollEnabled = false
         tableView.separatorColor = UIColor.clear
-        // tableView.isHidden = true
         
-        pointLabel.text = String(points) + " points"
-        if dataAccessObject.isAmongWinners(with: points) {
-            let player = Player(score: points, name: "pipi2", latitude: 0.0, longitude: 0.0)
-            dataAccessObject.save(winner: player)
-        }
         winners = dataAccessObject.winners
         for i in 0..<winners.count {
             print(winners[i])
@@ -68,6 +58,7 @@ extension GameSummaryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        print("index path number \(indexPath)")
         cell.textLabel?.text = winners[0].description
         return cell
     }
@@ -80,6 +71,6 @@ extension GameSummaryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return winners.count
     }
 }

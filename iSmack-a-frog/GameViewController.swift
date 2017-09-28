@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
     
     var gameConfig: GameConfig!
     
+    let dataAccessObject = DataManager()
+    
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 10.0, bottom: 5.0, right: 10.0)
     
     fileprivate var cellsPerRow: CGFloat!
@@ -63,10 +65,22 @@ class GameViewController: UIViewController {
         }
     }
     
+    func gameOverSegue() {
+        let points = game.gamePoints
+        let isAWinner = dataAccessObject.isAmongWinners(with: points)
+        if !isAWinner {
+            performSegue(withIdentifier: "toGameSummary", sender: self)
+        } else {
+            performSegue(withIdentifier: "toWinnerDetails", sender: self)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destGameController = segue.destination as? GameSummaryViewController {
-            let points = game.gamePoints
-            destGameController.points = points
+        let points = game.gamePoints
+        if segue.identifier == "toWinnerDetails" {
+            if let controller = segue.destination as? WinnerDetailController {
+                controller.points = points
+            }
         }
     }
 }
@@ -229,6 +243,7 @@ extension GameViewController: GameDelegate {
             }
         }
          //gameBoardCollectionView.reloadData()
-        performSegue(withIdentifier: "toGameSummary", sender: self)
+        self.gameOverSegue()
+        //performSegue(withIdentifier: "toGameSummary", sender: self)
     }
 }

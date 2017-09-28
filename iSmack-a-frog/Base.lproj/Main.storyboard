@@ -265,6 +265,7 @@
                         <outlet property="life3" destination="s6Z-4p-1dN" id="eAE-AA-ZWy"/>
                         <outlet property="scores" destination="wXZ-eJ-SAK" id="CaM-Lv-Rne"/>
                         <segue destination="4eH-Bs-Z5s" kind="show" identifier="toGameSummary" id="7n4-Mw-rVd"/>
+                        <segue destination="bIG-64-RSf" kind="showDetail" identifier="toWinnerDetails" id="Og5-St-Izz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="it3-8h-63E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +330,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ex0-z1-d9w" firstAttribute="leading" secondItem="dw3-qD-6Nq" secondAttribute="leading" id="M6Y-Tv-2gG"/>
+                            <constraint firstAttribute="trailing" secondItem="dw3-qD-6Nq" secondAttribute="trailing" constant="251" id="Api-Kr-d1r"/>
+                            <constraint firstItem="ex0-z1-d9w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dw3-qD-6Nq" secondAttribute="leading" id="M6Y-Tv-2gG"/>
                             <constraint firstItem="Prd-DM-dNC" firstAttribute="top" secondItem="ex0-z1-d9w" secondAttribute="bottom" constant="39" id="ShO-pI-jXs"/>
                             <constraint firstItem="ex0-z1-d9w" firstAttribute="top" secondItem="BiH-6E-Rmt" secondAttribute="bottom" constant="39" id="eQR-Q2-ksh"/>
                             <constraint firstItem="dw3-qD-6Nq" firstAttribute="top" secondItem="BiH-6E-Rmt" secondAttribute="bottom" id="iIG-Vb-ZUM"/>
@@ -347,28 +349,10 @@
             </objects>
             <point key="canvasLocation" x="2047.5" y="-565"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="8CR-ik-rxA">
-            <objects>
-                <viewController id="d0S-dF-F2r" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fwg-Sq-U6L"/>
-                        <viewControllerLayoutGuide type="bottom" id="obH-jW-Bxn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VAc-UK-AKS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0IK-gc-eQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3158" y="-565"/>
-        </scene>
-        <!--View Controller-->
+        <!--Winner Detail Controller-->
         <scene sceneID="MSj-IP-GNf">
             <objects>
-                <viewController id="bIG-64-RSf" sceneMemberID="viewController">
+                <viewController id="bIG-64-RSf" customClass="WinnerDetailController" customModule="iSmack_a_frog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uu7-L4-GrC"/>
                         <viewControllerLayoutGuide type="bottom" id="TSf-PE-eid"/>
@@ -378,25 +362,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-cq-wrg" userLabel="Close">
-                                <rect key="frame" x="16" y="20" width="49" height="39"/>
+                                <rect key="frame" x="16" y="20" width="68" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
-                                <state key="normal" title="Close">
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="closeDetailScreen:" destination="bIG-64-RSf" eventType="touchUpInside" id="46t-l8-zxa"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-9p-7zY">
-                                <rect key="frame" x="36" y="133" width="248" height="214.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-9p-7zY">
+                                <rect key="frame" x="36" y="133" width="248" height="215"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld" userLabel="nameStack">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZvR-RP-2ld" userLabel="nameStack">
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="49"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-Hj-7Lc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-Hj-7Lc">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="49"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="29"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-P7-jGy">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJp-P7-jGy">
                                                 <rect key="frame" x="86" y="0.0" width="162" height="49"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
@@ -407,17 +394,17 @@
                                             <constraint firstItem="VJp-P7-jGy" firstAttribute="leading" secondItem="g3G-Hj-7Lc" secondAttribute="trailing" constant="13" id="YPJ-Gf-mmn"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu" userLabel="middleStack">
-                                        <rect key="frame" x="23" y="49" width="202.5" height="165.5"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-yT-nhu" userLabel="middleStack">
+                                        <rect key="frame" x="23" y="49" width="202" height="166"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
-                                                <rect key="frame" x="38.5" y="0.0" width="125" height="101.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toon_shocked_frog.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-kj-sKo">
+                                                <rect key="frame" x="38.5" y="0.0" width="125" height="102"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                                 </accessibility>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
-                                                <rect key="frame" x="0.0" y="101.5" width="202.5" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have earned " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-0j-eTk">
+                                                <rect key="frame" x="0.0" y="102" width="202" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="rZn-OL-zfl"/>
                                                 </constraints>
@@ -425,8 +412,8 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
-                                                <rect key="frame" x="40.5" y="133.5" width="121" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 points!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-h4-el5">
+                                                <rect key="frame" x="40.5" y="134" width="121" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="yhk-PM-o38"/>
                                                 </constraints>
@@ -438,21 +425,30 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="sl4-yT-nhu" firstAttribute="top" secondItem="fmY-9p-7zY" secondAttribute="top" constant="49" id="8Bt-Lh-Ckr"/>
+                                    <constraint firstItem="sl4-yT-nhu" firstAttribute="top" secondItem="ZvR-RP-2ld" secondAttribute="bottom" id="CY8-5v-LBa"/>
                                     <constraint firstItem="ZvR-RP-2ld" firstAttribute="leading" secondItem="fmY-9p-7zY" secondAttribute="leading" id="EPV-9C-aNz" userLabel="nameStack.bottom = middlestack.top + 8"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZvR-RP-2ld" secondAttribute="trailing" id="aLz-Qr-Bai"/>
-                                    <constraint firstItem="sl4-yT-nhu" firstAttribute="top" secondItem="ZvR-RP-2ld" secondAttribute="bottom" constant="8" id="vJY-ZG-sPF"/>
+                                    <constraint firstItem="sl4-yT-nhu" firstAttribute="leading" secondItem="fmY-9p-7zY" secondAttribute="leading" constant="23" id="vce-fw-GAu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fmY-9p-7zY" firstAttribute="centerY" secondItem="znH-RC-BXz" secondAttribute="centerY" id="1Ix-tB-VY0"/>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" id="Fa2-0b-VWy"/>
                             <constraint firstItem="fmY-9p-7zY" firstAttribute="centerX" secondItem="znH-RC-BXz" secondAttribute="centerX" id="HDy-Vg-LrM"/>
                             <constraint firstItem="PTZ-cq-wrg" firstAttribute="top" secondItem="uu7-L4-GrC" secondAttribute="bottom" id="PZc-4L-Gfg"/>
+                            <constraint firstItem="TSf-PE-eid" firstAttribute="top" secondItem="fmY-9p-7zY" secondAttribute="bottom" constant="132" id="S8f-ih-G0M"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PTZ-cq-wrg" secondAttribute="trailingMargin" id="Vda-aD-h8B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fmY-9p-7zY" secondAttribute="trailing" constant="20" id="gc4-of-hab"/>
                             <constraint firstItem="fmY-9p-7zY" firstAttribute="leading" secondItem="znH-RC-BXz" secondAttribute="leadingMargin" constant="20" id="smE-hM-FhY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblPoints" destination="btI-h4-el5" id="8gO-Qs-uob"/>
+                        <outlet property="tfWinnerName" destination="VJp-P7-jGy" id="nbo-8R-whW"/>
+                        <segue destination="4eH-Bs-Z5s" kind="show" identifier="toWinnerFronDetails" id="bDp-BG-lRB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yfj-f7-Zfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,4 +465,7 @@
         <image name="toon_shocked_frog.png" width="125" height="100"/>
         <image name="x-life.png" width="175" height="188"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bDp-BG-lRB"/>
+    </inferredMetricsTieBreakers>
 </document>
